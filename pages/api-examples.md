@@ -47,3 +47,5 @@ const { site, theme, page, frontmatter } = useData()
 ## More
 
 Check out the documentation for the [full list of runtime APIs](https://vitepress.dev/reference/runtime-api#usedata).
+
+![](https://image.newarea.site/2024-05-22-22-55-38.png)
