@@ -1,9 +1,8 @@
-import { defineConfig } from 'vite'
 import { dirname, join, resolve } from 'node:path'
-import MarkdownTransform from './.vitepress/plugins/vite-plugin-md-transform'
+import { defineConfig } from 'vite'
 import VueComponents from 'unplugin-vue-components/vite'
 import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers'
-import { PageProperties, PagePropertiesMarkdownSection } from '@nolebase/vitepress-plugin-page-properties/vite'
+import MarkdownTransform from './.vitepress/plugins/vite-plugin-md-transform'
 
 export default defineConfig(() => {
   return {
@@ -13,17 +12,17 @@ export default defineConfig(() => {
       },
     },
     optimizeDeps: {
-      exclude: [ 
+      exclude: [
         '@nolebase/vitepress-plugin-enhanced-readabilities/client',
-        'vitepress'
-      ], 
+        'vitepress',
+      ],
     },
-    ssr: { 
-      noExternal: [ 
+    ssr: {
+      noExternal: [
         '@nolebase/vitepress-plugin-enhanced-readabilities',
         '@nolebase/vitepress-plugin-highlight-targeted-heading',
-      ], 
-    }, 
+      ],
+    },
     plugins: [
       MarkdownTransform(),
       VueComponents({
@@ -35,15 +34,6 @@ export default defineConfig(() => {
           }),
         ],
       }),
-
-      PageProperties(),
-      // PagePropertiesMarkdownSection({
-      //   excludes: [
-      //     join('pages', 'en', 'index.md'),
-      //     join('pages', 'zh-CN', 'index.md'),
-      //   ],
-      // }),
     ],
-    // 其他的配置...
   }
 })

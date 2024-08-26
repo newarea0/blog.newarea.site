@@ -1,5 +1,6 @@
 import { resolve } from 'node:path'
 import { createWriteStream, readFileSync } from 'node:fs'
+import { generateSidebar } from 'vitepress-sidebar'
 
 /**
  * 字符替换
@@ -73,29 +74,29 @@ export function convertMdImageToAImage(mdContent: string) {
     // '<ClientOnly><a-image src="$2" alt="$1" /></ClientOnly>',
     '<a-image src="$2" alt="$1" />',
 
-//     `<Fancybox
-//   :options="{
-//     Carousel: {
-//       infinite: false,
-//     },
-//   }"
-// >
-//   <a data-fancybox="gallery" href="https://lipsum.app/id/60/1600x1200">
-//     <img src="https://lipsum.app/id/60/200x150" width="200" height="150" />
-//   </a>
-//   <a data-fancybox="gallery" href="https://lipsum.app/id/61/1600x1200">
-//     <img src="https://lipsum.app/id/61/200x150" width="200" height="150" />
-//   </a>
-//   <a data-fancybox="gallery" href="https://lipsum.app/id/62/1600x1200">
-//     <img src="https://lipsum.app/id/62/200x150" width="200" height="150" />
-//   </a>
-//   <a data-fancybox="gallery" href="https://lipsum.app/id/63/1600x1200">
-//     <img src="https://lipsum.app/id/63/200x150" width="200" height="150" />
-//   </a>
-//   <a data-fancybox="gallery" href="https://lipsum.app/id/64/1600x1200">
-//     <img src="https://lipsum.app/id/64/200x150" width="200" height="150" />
-//   </a>
-// </Fancybox>`
+    //     `<Fancybox
+    //   :options="{
+    //     Carousel: {
+    //       infinite: false,
+    //     },
+    //   }"
+    // >
+    //   <a data-fancybox="gallery" href="https://lipsum.app/id/60/1600x1200">
+    //     <img src="https://lipsum.app/id/60/200x150" width="200" height="150" />
+    //   </a>
+    //   <a data-fancybox="gallery" href="https://lipsum.app/id/61/1600x1200">
+    //     <img src="https://lipsum.app/id/61/200x150" width="200" height="150" />
+    //   </a>
+    //   <a data-fancybox="gallery" href="https://lipsum.app/id/62/1600x1200">
+    //     <img src="https://lipsum.app/id/62/200x150" width="200" height="150" />
+    //   </a>
+    //   <a data-fancybox="gallery" href="https://lipsum.app/id/63/1600x1200">
+    //     <img src="https://lipsum.app/id/63/200x150" width="200" height="150" />
+    //   </a>
+    //   <a data-fancybox="gallery" href="https://lipsum.app/id/64/1600x1200">
+    //     <img src="https://lipsum.app/id/64/200x150" width="200" height="150" />
+    //   </a>
+    // </Fancybox>`
   )
   return convertedContent
 }
@@ -125,4 +126,26 @@ export function getReadFileSync(code: string) {
       }
       return matchedString
     })
+}
+
+export function getNav(navs) {
+  return navs.map(item => ({
+    text: `${item[2]} ${item[0]}`,
+    activeMatch: `/${item[0]}/`,
+    link: `${item[0]}/${item[1]}`,
+  }))
+}
+
+export function getSidebar(navs) {
+  const vitepressSidebarOptions = navs.map(item => ({
+    documentRootPath: '/',
+    scanStartPath: item[0],
+    resolvePath: `/${item[0]}/`,
+    collapsed: true,
+    sortMenusOrderNumericallyFromTitle: true,
+    removePrefixAfterOrdering: true,
+    prefixSeparator: '.',
+  }))
+
+  return generateSidebar(vitepressSidebarOptions)
 }
