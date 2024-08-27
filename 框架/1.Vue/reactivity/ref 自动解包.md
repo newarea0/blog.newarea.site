@@ -86,7 +86,7 @@ index.vue
 </template>
 
 <script setup>
-  import Hello from '@/components/Hello.vue'
+  import Hello from '#/components/Hello.vue'
 
   const helloRef = ref(null)
   console.log(helloRef.value) // null

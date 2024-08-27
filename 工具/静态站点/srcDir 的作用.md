@@ -3,23 +3,23 @@
 本篇笔记用到的示例项目结构：
 
 ```
-blog.newarea.site                                 
-├─ pages                                          
-│  ├─ api-examples.md                             
-│  ├─ index.md                                    
-│  └─ markdown-examples.md                        
-├─ public                                         
-│  └─ logo.svg                                    
-├─ .vitepress                                      
-│  ├─ theme                                       
-│  │  ├─ index.ts                                 
-│  │  └─ style.css                                
-│  └─ config.mts                                  
-├─ components.d.ts                                
-├─ eslint.config.mjs                              
-├─ package.json                                   
-├─ pnpm-lock.yaml                                 
-└─ vite.config.ts                                       
+blog.newarea.site
+├─ pages
+│  ├─ api-examples.md
+│  ├─ index.md
+│  └─ markdown-examples.md
+├─ public
+│  └─ logo.svg
+├─ .vitepress
+│  ├─ theme
+│  │  ├─ index.ts
+│  │  └─ style.css
+│  └─ config.mts
+├─ components.d.ts
+├─ eslint.config.mjs
+├─ package.json
+├─ pnpm-lock.yaml
+└─ vite.config.ts
 ```
 
 当 `.vitepress/config.mts` 中不显式设置 `srcDir` 时：
@@ -33,7 +33,7 @@ blog.newarea.site
 - Vite 配置文件 `vite.config.ts`，不生效。
 - 静态资源存放目录 `public`，不生效。
 
-当时此时将文件 `vite.config.ts`、目录 `public`移动到目录 `pages` 中，Vite 配置文件 `vite.config.ts`、静态资源存放目录 `public` 均又生效了。
+此时将文件 `vite.config.ts`、目录 `public`移动到目录 `pages` 中，Vite 配置文件 `vite.config.ts`、静态资源存放目录 `public` 均又生效了。
 
 **由此可见，`srcDir` 不仅设置了 markdown 文件所在的文件夹，也设置了 Vite 配置文件 `vite.config.ts`、静态资源存放目录 `public` 所在文件夹。**
 

@@ -3,13 +3,12 @@ import { getNav, getSidebar } from './scripts/utils'
 
 const github = 'https://github.com/stormzhangbx/blog.newarea.site'
 const navs = [
-  ['基础', 'HTML/拖放'],
-  ['框架', '2.React/Ant Design/form'],
-  ['工具', 'Git/追加新的改动到之前的 commmit'],
-  ['依赖', '客户端/Axios/Axios'],
-  ['构建工具', 'Vite/配置总结'],
-  ['规范化', 'ESLint v9/basic'],
-  ['组件库', 'Element Plus/封装弹框'],
+  ['基础', '1.HTML/svg/basic'],
+  ['框架', '1.Vue/常用类型'],
+  ['工具', '宝塔面板/新建站点'],
+  ['依赖', '客户端/Async%20Validate'],
+  ['构建工具', '1.Vite/部署'],
+  ['规范化', '中文排版'],
 ]
 
 // https://vitepress.dev/reference/site-config
@@ -23,6 +22,10 @@ export default defineConfig({
   markdown: {
     lineNumbers: true,
   },
+  head: [
+    ['link', { rel: 'shortcut icon', href: '/logo.svg' }],
+    ['link', { rel: 'icon', type: 'image/x-icon', href: '/logo.svg' }],
+  ],
   themeConfig: {
     nav: getNav(navs),
     sidebar: getSidebar(navs),

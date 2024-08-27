@@ -130,7 +130,7 @@ export function getReadFileSync(code: string) {
 
 export function getNav(navs) {
   return navs.map(item => ({
-    text: `${item[2]} ${item[0]}`,
+    text: item[0],
     activeMatch: `/${item[0]}/`,
     link: `${item[0]}/${item[1]}`,
   }))

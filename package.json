@@ -17,12 +17,16 @@
   },
   "dependencies": {
     "ant-design-vue": "^4.2.3",
+    "antd": "^5.20.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "vue": "^3.4.38"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.25.1",
     "@nolebase/vitepress-plugin-enhanced-readabilities": "^2.4.0",
     "@nolebase/vitepress-plugin-highlight-targeted-heading": "^2.4.0",
+    "@vitejs/plugin-react": "^4.3.1",
     "eslint": "9.5.0",
     "unplugin-vue-components": "^0.27.4",
     "vite": "^5.4.1",

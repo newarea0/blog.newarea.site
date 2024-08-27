@@ -20,7 +20,6 @@ develop 不能直接合并到 master 分支，而是通过 release 分支合并�
 
 由此可以看出，develop 相当于 master 和 功能分支之间的一个缓冲分支。
 
-
 ## 2 辅助分支
 
 ### 2.1 feature

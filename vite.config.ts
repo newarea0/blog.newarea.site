@@ -2,14 +2,19 @@ import { dirname, join, resolve } from 'node:path'
 import { defineConfig } from 'vite'
 import VueComponents from 'unplugin-vue-components/vite'
 import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers'
+import react from '@vitejs/plugin-react'
 import MarkdownTransform from './.vitepress/plugins/vite-plugin-md-transform'
 
 export default defineConfig(() => {
   return {
     resolve: {
       alias: {
-        '@': resolve(__dirname, './vitepress'),
+        '#': resolve(__dirname, './.vitepress'),
+        // '#/components': resolve(__dirname, './.vitepress/components'),
       },
+      // alias: [
+      //   { find: '/@/', replacement: 'aaa' },
+      // ],
     },
     optimizeDeps: {
       exclude: [
@@ -24,10 +29,12 @@ export default defineConfig(() => {
       ],
     },
     plugins: [
+      react(),
       MarkdownTransform(),
       VueComponents({
+        dirs: './.vitepress/components/vue',
         include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
-        dts: '../components.d.ts',
+        dts: './.vitepress/components.d.ts',
         resolvers: [
           AntDesignVueResolver({
             importStyle: false, // css in js
