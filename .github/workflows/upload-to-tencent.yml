@@ -1,0 +1,60 @@
+name: Upload to Tencent
+
+on:
+  # 每当 push 到远程 master 分支时触发 Github Action
+  push:
+    branches:
+      - main
+
+jobs:
+  upload-to-tencent:
+    # 使用环境
+    runs-on: ubuntu-latest
+
+    steps:
+      # 将代码拉取到虚拟机
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          persist-credentials: false
+
+      # 安装 pnpm
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+          # 使用 pnpm install 安装依赖
+          run_install: true
+
+      # 安装 Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          # 用于指定用于缓存的包管理器，应该先安装包管理器
+          cache: pnpm
+
+      # 运行构建脚本
+      - name: Build VuePress site
+        run: pnpm build
+
+      # 部署到服务器
+      - name: Upload to Deploy Server
+        uses: appleboy/scp-action@master
+        with:
+          # 服务器域名
+          host: ${{ secrets.SERVER_HOST }}
+          # 服务器用户名
+          username: ${{ secrets.SERVER_USERNAME }}
+          # 服务器密码
+          password: ${{ secrets.SERVER_PASSWORD }}
+          # 服务器端口
+          port: ${{ secrets.SERVER_PORT }}
+          # 指定上传的文件目录(项目配置的打包目录名称)
+          source: './dist/*'
+          # 指定上传服务器目录
+          target: '/www/wwwroot/blog.newarea.site'
+          # 解压时覆盖现有文件
+          overwrite: true
+          # 删除指定数量的前导路径元素，必须指定，否则服务器中生成的路径为 /home/www/test/src/.vuepress/dist
+          strip_components: 1
