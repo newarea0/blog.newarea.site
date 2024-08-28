@@ -20,15 +20,15 @@ ts 编译速度与项目规模有关，如果项目比较大，代码很多，�
 
 想象这样一个场景。项目目录下有两个相对独立的模块 aaa 和 bbb。
 
-![图片](https://image.newarea.site/20230713/12.png "图片")
+![图片](https://image.newarea.site/20230713/12.png)
 
 它们是用同一个 tsconfig.json 来配置编译方式的：
 
-![图片](https://image.newarea.site/20230713/13.png "图片")
+![图片](https://image.newarea.site/20230713/13.png)
 
 执行 tsc 就会编译所有 include 的文件到 dist 目录下：
 
-![图片](https://image.newarea.site/20230713/14.png "图片")
+![图片](https://image.newarea.site/20230713/14.png)
 
 假设 aaa 和 bbb 都很大，编译要很久，但是两者的关联还不是特别大。
 
@@ -44,19 +44,19 @@ aaa 模块下的变动基本和 bbb 模块下的没啥关系，但是 aaa 变了
 
 在 aaa 和 bbb 下各自创建一个 tsconfig.json，放各自的编译配置。注意这里要加一个 composite: true，这是 Project Reference 需要的：
 
-![图片](https://image.newarea.site/20230713/15.png "图片")
+![图片](https://image.newarea.site/20230713/15.png)
 
 然后在根目录的 tsconfig.json 里加上一个 references 的配置，引入 aaa 和 bbb：
 
-![图片](https://image.newarea.site/20230713/16.png "图片")
+![图片](https://image.newarea.site/20230713/16.png)
 
 这样再执行 tsc --build 进行编译，你会发现编译结果多了 .d.ts 的声明，还多了 tsconfig.tsbuildinfo 的文件：
 
-![图片](https://image.newarea.site/20230713/17.png "图片")
+![图片](https://image.newarea.site/20230713/17.png)
 
 打开 tsconfig.tsbuildinfo 看一下，会发现它记录了编译了哪些文件，还记录了这些文件的 hash 值：
 
-![图片](https://image.newarea.site/20230713/18.png "图片")
+![图片](https://image.newarea.site/20230713/18.png)
 
 看到这里，你是不是就知道为啥它能实现缓存了？
 
@@ -64,7 +64,7 @@ aaa 模块下的变动基本和 bbb 模块下的没啥关系，但是 aaa 变了
 
 而且，别的地方可能用到这个 project 的类型，所以需要生成 d.ts 声明文件，这就是为啥我们没有指定 declaration: true 的配置，但是编译产物里还是有 d.ts。其实这是 composite 选项做的，它设置了 Project Reference 需要的一些编译选项：
 
-![图片](https://image.newarea.site/20230713/19.png "图片")
+![图片](https://image.newarea.site/20230713/19.png)
 
 现在当你修改了 aaa 下某个模块的代码，重新编译的时候就不会编译 bbb 了，只会编译 aaa 下的那个模块。
 
@@ -74,7 +74,7 @@ aaa 模块下的变动基本和 bbb 模块下的没啥关系，但是 aaa 变了
 
 此外，Project Reference 还支持通过 prepend 指定编译顺序，比如给 bbb 添加 prepend: true，那么就会先编译 bbb，再编译当前项目，然后编译 aaa：
 
-![图片](https://image.newarea.site/20230713/20.png "图片")
+![图片](https://image.newarea.site/20230713/20.png)
 
 其实很容易想到，monorepo 里就可以用 Project Reference 来提升 tsc 的编译性能。因为 monorepo 下的多个 project 相互之间都比较独立，一个模块的改动一般不会影响另一个模块，所以编译的时候也应该各自做缓存。
 
