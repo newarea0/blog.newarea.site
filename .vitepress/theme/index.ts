@@ -4,15 +4,13 @@ import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import './style.css'
 
-import {
-  NolebaseEnhancedReadabilitiesMenu,
-  NolebaseEnhancedReadabilitiesScreenMenu,
-} from '@nolebase/vitepress-plugin-enhanced-readabilities/client'
+// 阅读增强
+import { InjectionKey, LayoutMode, NolebaseEnhancedReadabilitiesMenu, NolebaseEnhancedReadabilitiesScreenMenu } from '@nolebase/vitepress-plugin-enhanced-readabilities/client'
+import type { Options } from '@nolebase/vitepress-plugin-enhanced-readabilities/client'
 import '@nolebase/vitepress-plugin-enhanced-readabilities/client/style.css'
 
-import {
-  NolebaseHighlightTargetedHeading,
-} from '@nolebase/vitepress-plugin-highlight-targeted-heading/client'
+// 闪烁高亮当前的目标标题
+import { NolebaseHighlightTargetedHeading } from '@nolebase/vitepress-plugin-highlight-targeted-heading/client'
 import '@nolebase/vitepress-plugin-highlight-targeted-heading/client/style.css'
 
 export default {
@@ -30,7 +28,12 @@ export default {
       ],
     })
   },
-  enhanceApp({ app, router, siteData }) {
-
+  enhanceApp({ app }) {
+    app.provide(InjectionKey, {
+      layoutSwitch: {
+        // 默认全屏宽度
+        defaultMode: LayoutMode.FullWidth,
+      },
+    } as Options)
   },
 } satisfies Theme

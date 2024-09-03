@@ -15,7 +15,7 @@ hero:
   actions:
     - theme: brand
       text: 开始阅读
-      link: /基础/HTML/拖放/
+      link: /基础/1.HTML/svg/basic
 
 features:
   - title: 基础篇
