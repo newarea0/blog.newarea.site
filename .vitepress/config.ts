@@ -13,7 +13,7 @@ const navs = [
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: '小晰博客',
+  title: '码农备忘录',
   description: 'A VitePress Site',
   outDir: './dist',
   lastUpdated: true,

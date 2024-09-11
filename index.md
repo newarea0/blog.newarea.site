@@ -2,16 +2,16 @@
 # https://vitepress.dev/reference/default-theme-home-page
 layout: home
 
-title: 小晰博客
+title: 码农备忘录
 titleTemplate: 阅读·思考·行动
 
 hero:
-  name: "小晰博客"
+  name: "码农备忘录"
   text: "阅读·思考·行动"
   tagline: 种一棵树最好的时间是十年前，其次是现在
   image:
     src: /logo.svg
-    alt: 小晰博客
+    alt: 码农备忘录
   actions:
     - theme: brand
       text: 开始阅读
