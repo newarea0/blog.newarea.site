@@ -25,7 +25,6 @@ export default defineConfig({
   },
   head: [
     ['link', { rel: 'shortcut icon', href: '/logo.svg' }],
-    ['link', { rel: 'icon', type: 'image/x-icon', href: '/logo.svg' }],
   ],
   lang: 'zh',
   themeConfig: {
@@ -96,5 +95,9 @@ export default defineConfig({
     darkModeSwitchLabel: '主题',
     lightModeSwitchTitle: '切换到浅色模式',
     darkModeSwitchTitle: '切换到深色模式',
+    footer: {
+      message: `全链路学习网站，欢迎 <a target="_blank" style="color: var(--vp-c-brand)" href="${github}">star ⭐</a> 让更多人发现`,
+      copyright: `<a target="_blank" href="https://beian.miit.gov.cn/">粤ICP备2023127875号-1</a> | 版权所有 © 2024 <a target="_blank" href="${github}">stormzhangbx</a>`,
+    },
   },
 })
