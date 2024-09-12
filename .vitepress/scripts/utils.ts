@@ -105,11 +105,20 @@ export function getReadFileSync(code: string) {
 }
 
 export function getNav(navs) {
-  return navs.map(item => ({
-    text: item[0],
-    activeMatch: `/${item[0]}/`,
-    link: `${item[0]}/${item[1]}`,
-  }))
+  return [
+    ...navs.map(item => ({
+      text: item[0],
+      activeMatch: `/${item[0]}/`,
+      link: `${item[0]}/${item[1]}`,
+    })),
+    {
+      text: '关于',
+      items: [
+        { text: '关于本站', link: '/关于/关于本站' },
+        { text: '关于我', link: '/关于/关于我' },
+      ],
+    },
+  ]
 }
 
 export function getSidebar(navs) {
