@@ -40,7 +40,7 @@ jobs:
 
       # 部署到服务器
       - name: Upload to Deploy Server
-        uses: appleboy/scp-action@master
+        uses: appleboy/scp-action@v0.1.3
         with:
           # 服务器域名
           host: ${{ secrets.SERVER_HOST }}
