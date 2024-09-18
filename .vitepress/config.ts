@@ -2,6 +2,7 @@ import { defineConfig } from 'vitepress'
 import { withPwa } from '@vite-pwa/vitepress'
 import { getNav, getSidebar } from './scripts/utils'
 import { description, github, title } from './scripts/meta'
+import pwa from './scripts/pwa'
 
 const navs = [
   ['基础', '1.HTML/svg/basic'],
@@ -24,6 +25,7 @@ export default withPwa(defineConfig({
   markdown: {
     lineNumbers: true,
   },
+  pwa,
   head: [
     ['link', { rel: 'icon', type: 'image/x-icon', sizes: '16x16 32x32 48x48', href: '/favicon/favicon.svg' }],
     ['link', { rel: 'apple-touch-icon', sizes: '180x180', href: '/favicon/apple-touch-icon.png' }],
