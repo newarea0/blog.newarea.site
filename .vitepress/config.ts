@@ -1,7 +1,8 @@
 import { defineConfig } from 'vitepress'
+import { withPwa } from '@vite-pwa/vitepress'
 import { getNav, getSidebar } from './scripts/utils'
+import { description, github, title } from './scripts/meta'
 
-const github = 'https://github.com/stormzhangbx/blog.newarea.site'
 const navs = [
   ['基础', '1.HTML/svg/basic'],
   ['框架', '1.Vue/常用类型'],
@@ -12,9 +13,9 @@ const navs = [
 ]
 
 // https://vitepress.dev/reference/site-config
-export default defineConfig({
-  title: '码农备忘录',
-  description: 'A VitePress Site',
+export default withPwa(defineConfig({
+  title,
+  description,
   outDir: './dist',
   lastUpdated: true,
   useWebFonts: false,
@@ -24,7 +25,10 @@ export default defineConfig({
     lineNumbers: true,
   },
   head: [
-    ['link', { rel: 'shortcut icon', href: '/logo.svg' }],
+    ['link', { rel: 'icon', type: 'image/x-icon', sizes: '16x16 32x32 48x48', href: '/favicon/favicon.svg' }],
+    ['link', { rel: 'apple-touch-icon', sizes: '180x180', href: '/favicon/apple-touch-icon.png' }],
+    ['link', { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' }],
+    ['link', { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' }],
   ],
   lang: 'zh',
   themeConfig: {
@@ -100,4 +104,4 @@ export default defineConfig({
       copyright: `<a target="_blank" href="https://beian.miit.gov.cn/">粤ICP备2023127875号-1</a> | 版权所有 © 2024`,
     },
   },
-})
+}))

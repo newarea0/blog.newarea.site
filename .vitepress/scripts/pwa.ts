@@ -16,17 +16,12 @@ const pwa: Partial<VitePWAOptions> = {
     theme_color: '#ffffff',
     icons: [
       {
-        src: '/images/pwa-120x120.png',
-        sizes: '120x120',
-        type: 'image/png',
-      },
-      {
-        src: '/images/pwa-192x192.png',
+        src: '/favicon/favicon-192x192.png',
         sizes: '192x192',
         type: 'image/png',
       },
       {
-        src: '/images/pwa-512x512.png',
+        src: '/favicon/favicon-512x512.png',
         sizes: '512x512',
         type: 'image/png',
         purpose: 'any',
