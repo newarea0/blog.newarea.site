@@ -104,3 +104,46 @@ export function getReadFileSync(code: string) {
       return matchedString
     })
 }
+
+const navs = [
+  ['基础', 'HTML/svg/basic'],
+  ['框架', 'Vue/常用类型'],
+  ['工具', '宝塔面板/新建站点'],
+  ['依赖包', '客户端/Async%20Validate'],
+  ['构建工具', 'Vite/部署'],
+  ['规范化', '中文排版'],
+]
+
+export function getNav(navs) {
+  return [
+    ...navs.map(item => ({
+      text: item[0],
+      activeMatch: `/${item[0]}/`,
+      link: `${item[0]}/${item[1]}`,
+    })),
+    {
+      text: '关于',
+      items: [
+        { text: '关于本站', link: '/关于/关于本站' },
+        { text: '关于我', link: '/关于/关于我' },
+      ],
+    },
+  ]
+}
+
+export function getSidebar(navs) {
+  const vitepressSidebarOptions = navs.map(item => ({
+    debugPrint: true,
+    documentRootPath: '/',
+    scanStartPath: item[0],
+    resolvePath: `/${item[0]}/`,
+    collapsed: true,
+    sortMenusOrderNumericallyFromTitle: true,
+    removePrefixAfterOrdering: true,
+    prefixSeparator: '.',
+  }))
+
+  return generateSidebar(vitepressSidebarOptions)
+}
+
+getSidebar(navs)

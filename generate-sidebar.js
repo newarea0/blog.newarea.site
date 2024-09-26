@@ -49,7 +49,8 @@ function generateSidebar(dir, basePath = '') {
       if (name.toLowerCase() !== 'readme') {
         sidebar.push({
           text: name,
-          link: `/${path.join(basePath, name).replace(/\\/g, '/')}`,
+          // 去掉开头的斜杠，否则侧边栏菜单无法高亮
+          link: `${path.join(basePath, name).replace(/\\/g, '/')}`,
         })
       }
     }
