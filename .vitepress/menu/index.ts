@@ -6,7 +6,7 @@ import { standardizationSidebar } from './standardization'
 import { toolSidebar } from './tool'
 
 export const nav = [
-  { text: '基础', link: '/基础/HTML/svg/basic', activeMatch: '/基础/' },
+  { text: '基础', link: '/基础/HTML/contenteditable', activeMatch: '/基础/' },
   { text: '框架', link: '/框架/Vue/常用类型', activeMatch: '/框架/' },
   { text: '工具', link: '/工具/宝塔面板/新建站点', activeMatch: '/工具/' },
   { text: '依赖包', link: '/依赖包/客户端/Async%20Validate', activeMatch: '/依赖包/' },

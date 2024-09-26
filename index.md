@@ -15,13 +15,13 @@ hero:
   actions:
     - theme: brand
       text: 开始阅读
-      link: /基础/HTML/svg/basic
+      link: /基础/HTML/contenteditable
 
 features:
   - title: 基础篇
     icon:
       src: /html.svg
-    link: /基础/HTML/svg/basic
+    link: /基础/HTML/contenteditable
     linkText: 开始阅读
     details: 前端基础包括 HTML、CSS 和 JS 等，共同负责网页的结构、样式和交互功能。
   - title: 框架篇

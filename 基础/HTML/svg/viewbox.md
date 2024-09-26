@@ -1,67 +1,71 @@
-# viewbox
+# viewBox
+`viewBox` 是 SVG 中一个非常重要的属性，它定义了 SVG 图像的可见区域。理解 `viewBox` 对于掌握 SVG 的缩放和定位至关重要。让我们详细探讨一下 `viewBox` 的含义和用法。
 
-可以用在如下元素上：`<svg>`、`<symbol>`、`<view>`、`<marker>`、`<pattern>`
+## `viewBox` 的定义
 
-拿 `<svg>` 元素来说明，如果 `<svg>` 元素上不设置 `viewbox` 属性，则 `<svg>` 元素 大小是固定的，默认尺寸是 300*150px，也可以显式设置其大小，**其内部的图形元素大小也是固定尺寸的**。
+`viewBox` 属性定义了一个坐标系统，指定了 SVG 内容应该如何适应到它的容器中。它的语法如下：
 
-```html
-<svg width="300" height="300"></svg>
+```xml
+viewBox="x y width height"
 ```
 
-或者
+- `x`：可视区域的左上角 x 坐标
+- `y`：可视区域的左上角 y 坐标
+- `width`：可视区域的宽度
+- `height`：可视区域的高度
 
-```html
-<svg style="width: 300px;height: 300px;"></svg>
+## `viewBox` 的作用
+
+1. **定义坐标系统**：`viewBox` 创建了一个新的坐标系统，SVG 内的所有元素都相对于这个坐标系统定位。
+
+2. **控制缩放**：通过调整 `viewBox` 的尺寸，可以实现 SVG 内容的缩放。
+
+3. **裁剪内容**：`viewBox` 可以用来显示 SVG 的特定部分。
+
+4. **适应容器**：`viewBox` 帮助 SVG 内容适应不同大小的容器。
+
+## 示例
+
+以下是一些使用 `viewBox` 的示例：
+
+### 基本使用
+
+```xml
+<svg width="200" height="200" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="40" fill="red" />
+</svg>
 ```
 
-当使用了 `viewbox` 属性后，**svg 内部的图形元素大小不是固定的**，会根据 svg 尺寸的变化而变化。
+在这个例子中，SVG 的物理尺寸是 200x200 像素，但 `viewBox` 定义了一个 100x100 的坐标系统。这意味着 SVG 内容会被放大两倍来填充容器。
 
-`viewbox` 属性值：`offsetX offsetY width height`，其中 offsetX、offsetY 可以是负数、0、正数，width、height 必须大于 0。
+### 改变视图
 
-## 1 画布的宽高比和 viewbox 的宽高比一样
-
-```html
-<style>
-  svg {
-    position: absolute;
-    top: 700px;
-    left: 700px;
-  }
-</style>
-
-<body>
-  <svg style="width: 300px;height: 300px;background: red" viewbox="-105 -55 150 150">
-    <rect x="10" y="10" width="200" height="100" fill="skyblue"></rect>
-  </svg>
-</body>
+```xml
+<svg width="200" height="200" viewBox="25 25 50 50" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="40" fill="blue" />
+</svg>
 ```
 
-### 1.1 绘制模型
+这个例子中，`viewBox` 只显示了圆的一部分，因为视图被移动并缩小了。
 
-`viewbox="-105 -55 300 300"`、`<rect x="10" y="10" width="200" height="100" fill="skyblue"></rect>` 中的数学的单位都是"虚拟单位"。
+### 保持宽高比
 
-想象在宽为 150 "虚拟单位"、高为 150 "虚拟单位"的画布上绘制矩形，矩形长 200 "虚拟单位"、宽 100 "虚拟单位"，矩形左上角在画布左上角右下方，且水平方向距离 10 "虚拟单位"，垂直方向距离 10 "虚拟单位"。
+```xml
+<svg width="300" height="150" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="40" fill="green" />
+</svg>
+```
 
-从而得到“虚拟单位”模型。
+这里，`preserveAspectRatio` 属性与 `viewBox` 一起使用，确保内容在保持宽高比的同时居中显示。
 
-### 1.2 确定实际大小
+## 注意事项
 
-根据 svg 实际尺寸和 width、height 确定“虚拟单位”和px之间的**比例**，从而得到实际单位（px）模型
+1. `viewBox` 的值是没有单位的，它们代表一个抽象的坐标系统。
 
-svg 的实际大小是 `300*300px`，模型大小是 `width*height虚拟单位`，即 1虚拟单位=2px
+2. 如果 `viewBox` 的宽高比与 SVG 容器的宽高比不同，可能会导致内容被拉伸或压缩。使用 `preserveAspectRatio` 可以控制这种情况。
 
-### 1.3 确定实际位置
+3. `viewBox` 可以用来创建响应式的 SVG 图像，使其能够适应不同大小的屏幕。
 
-根据 offsetX、offsetY 确定实际单位模型的位置。
+## 总结
 
-offsetX > 0，距 svg 实际位置（即本例中 `position: absolute; top: 700px; left: 700px;` 确定的位置）左上角左侧 offsetX 个实际单位
-offsetX < 0，距 svg 实际位置左上角右侧 offsetX 个实际单位（这里是 210px）
-offsetX = 0，跟 svg 实际位置左上角水平位置重合。
-
-offsetY > 0，距 svg 实际位置左上角上方 offsetY 个实际单位
-offsetY < 0，距 svg 实际位置左上角下方 offsetY 个实际单位（这里是 210px）
-offsetY = 0，跟 svg 实际位置左上角垂直位置重合。
-
-根据上面规则确定实际模型的左上角位置，从而确定实际模型的实际位置。
-
-## 2 画布的宽高比和 viewbox 的宽高比不一样
+`viewBox` 是 SVG 中控制视图、缩放和定位的强大工具。通过合理使用 `viewBox`，可以创建灵活、可缩放的 SVG 图像，适应各种显示需求。

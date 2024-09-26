@@ -7,14 +7,15 @@ export const basicSidebar: DefaultTheme.SidebarItem[] = [
     items: [
       { text: 'contenteditable', link: 'HTML/contenteditable' },
       {
-        text: 'svg',
+        text: 'SVG',
         collapsed: true,
         items: [
-          { text: 'basic', link: 'HTML/svg/basic' },
-          { text: 'element', link: 'HTML/svg/element' },
-          { text: 'fill-stroke', link: 'HTML/svg/fill-stroke' },
-          { text: 'svg-sprite', link: 'HTML/svg/svg-sprite' },
-          { text: 'viewbox', link: 'HTML/svg/viewbox' },
+          { text: '概览', link: 'HTML/SVG/概览' },
+          { text: '几种元素含义', link: 'HTML/SVG/几种元素含义' },
+          { text: 'fill、stroke', link: 'HTML/SVG/fill、stroke' },
+          { text: 'currentColor', link: 'HTML/SVG/currentColor' },
+          { text: 'SVG 雪碧图', link: 'HTML/SVG/SVG 雪碧图' },
+          { text: 'viewbox', link: 'HTML/SVG/viewbox' },
         ],
       },
       { text: '使用 Preload、Prefetch 优化前端页面的资源加载', link: 'HTML/使用 Preload、Prefetch 优化前端页面的资源加载' },
