@@ -1,5 +1,6 @@
-import { resolve } from 'node:path'
-import { createWriteStream, readFileSync } from 'node:fs'
+import path, { resolve } from 'node:path'
+import fs, { createWriteStream, readFileSync } from 'node:fs'
+
 import { generateSidebar } from 'vitepress-sidebar'
 
 /**
@@ -102,35 +103,4 @@ export function getReadFileSync(code: string) {
       }
       return matchedString
     })
-}
-
-export function getNav(navs) {
-  return [
-    ...navs.map(item => ({
-      text: item[0],
-      activeMatch: `/${item[0]}/`,
-      link: `${item[0]}/${item[1]}`,
-    })),
-    {
-      text: '关于',
-      items: [
-        { text: '关于本站', link: '/关于/关于本站' },
-        { text: '关于我', link: '/关于/关于我' },
-      ],
-    },
-  ]
-}
-
-export function getSidebar(navs) {
-  const vitepressSidebarOptions = navs.map(item => ({
-    documentRootPath: '/',
-    scanStartPath: item[0],
-    resolvePath: `/${item[0]}/`,
-    collapsed: true,
-    sortMenusOrderNumericallyFromTitle: true,
-    removePrefixAfterOrdering: true,
-    prefixSeparator: '.',
-  }))
-
-  return generateSidebar(vitepressSidebarOptions)
 }

@@ -1,18 +1,9 @@
 import { defineConfig } from 'vitepress'
 import { withPwa } from '@vite-pwa/vitepress'
-import { getNav, getSidebar } from './scripts/utils'
 import { description, github, title } from './scripts/meta'
 import pwa from './scripts/pwa'
 import algoliaOptions from './scripts/algolia'
-
-const navs = [
-  ['基础', '1.HTML/svg/basic'],
-  ['框架', '1.Vue/常用类型'],
-  ['工具', '宝塔面板/新建站点'],
-  ['依赖', '客户端/Async%20Validate'],
-  ['构建工具', '1.Vite/部署'],
-  ['规范化', '中文排版'],
-]
+import { nav, sidebar } from './menu'
 
 // https://vitepress.dev/reference/site-config
 export default withPwa(defineConfig({
@@ -35,8 +26,8 @@ export default withPwa(defineConfig({
   ],
   lang: 'zh',
   themeConfig: {
-    nav: getNav(navs),
-    sidebar: getSidebar(navs),
+    nav,
+    sidebar,
     search: {
       provider: 'algolia',
       options: algoliaOptions,

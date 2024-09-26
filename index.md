@@ -15,19 +15,19 @@ hero:
   actions:
     - theme: brand
       text: 开始阅读
-      link: /基础/1.HTML/svg/basic
+      link: /基础/HTML/svg/basic
 
 features:
   - title: 基础篇
     icon:
       src: /html.svg
-    link: /基础/1.HTML/svg/basic
+    link: /基础/HTML/svg/basic
     linkText: 开始阅读
     details: 前端基础包括 HTML、CSS 和 JS 等，共同负责网页的结构、样式和交互功能。
   - title: 框架篇
     icon:
       src: /vue.svg
-    link: /框架/1.Vue/常用类型
+    link: /框架/Vue/常用类型
     linkText: 开始阅读
     details: 帮助开发者高效构建和管理复杂的用户界面。
   - title: 工具篇

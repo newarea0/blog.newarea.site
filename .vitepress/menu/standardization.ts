@@ -1,0 +1,58 @@
+import type { DefaultTheme } from 'vitepress'
+
+export const standardizationSidebar: DefaultTheme.SidebarItem[] = [
+  { text: 'commitlint', link: '/commitlint' },
+  { text: 'commitzen', link: '/commitzen' },
+  { text: 'editorconfig', link: '/editorconfig' },
+  {
+    text: 'ESLint',
+    collapsed: true,
+    items: [
+      { text: 'basic', link: '/ESLint/basic' },
+      { text: 'config-env', link: '/ESLint/config-env' },
+      { text: 'config-extents', link: '/ESLint/config-extents' },
+      { text: 'config-globals', link: '/ESLint/config-globals' },
+      { text: 'config-parser', link: '/ESLint/config-parser' },
+      { text: 'config-parserOptions', link: '/ESLint/config-parserOptions' },
+      { text: 'config-plugins', link: '/ESLint/config-plugins' },
+      { text: 'config-processor', link: '/ESLint/config-processor' },
+      { text: 'config-rules', link: '/ESLint/config-rules' },
+      { text: 'eslint-config-vs-eslint-plugin', link: '/ESLint/eslint-config-vs-eslint-plugin' },
+      { text: 'how-to-write-a-plugin', link: '/ESLint/how-to-write-a-plugin' },
+      { text: 'ignore', link: '/ESLint/ignore' },
+      { text: 'rule', link: '/ESLint/rule' },
+      { text: 'shareable-configs', link: '/ESLint/shareable-configs' },
+      { text: 'use', link: '/ESLint/use' },
+    ],
+  },
+  {
+    text: 'ESLint v9',
+    collapsed: true,
+    items: [
+      { text: 'basic', link: '/ESLint v9/basic' },
+      { text: 'configuration-object', link: '/ESLint v9/configuration-object' },
+      { text: 'eslint-config-inspector', link: '/ESLint v9/eslint-config-inspector' },
+      { text: 'eslint-config', link: '/ESLint v9/eslint-config' },
+      { text: 'eslint-stylistic', link: '/ESLint v9/eslint-stylistic' },
+      { text: 'quick-start', link: '/ESLint v9/quick-start' },
+    ],
+  },
+  { text: 'husky', link: '/husky' },
+  { text: 'lint-staged', link: '/lint-staged' },
+  { text: 'note', link: '/note' },
+  {
+    text: 'Prettier',
+    collapsed: true,
+    items: [
+      { text: 'config-file', link: '/Prettier/config-file' },
+      { text: 'config-option', link: '/Prettier/config-option' },
+      { text: 'difference-with-eslint', link: '/Prettier/difference-with-eslint' },
+      { text: 'ignore', link: '/Prettier/ignore' },
+      { text: 'use', link: '/Prettier/use' },
+      { text: 'webstorm-setting', link: '/Prettier/webstorm-setting' },
+    ],
+  },
+  { text: 'stylelint', link: '/stylelint' },
+  { text: 'yorkie', link: '/yorkie' },
+  { text: '中文排版', link: '/中文排版' },
+]
