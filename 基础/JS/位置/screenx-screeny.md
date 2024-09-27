@@ -1,1 +1,0 @@
-# screenX、screenY

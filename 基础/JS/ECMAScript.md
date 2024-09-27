@@ -1,4 +1,4 @@
-# ECMAScript 特性
+# ECMAScript
 
 ## 相关概念
 

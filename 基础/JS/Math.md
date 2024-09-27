@@ -11,12 +11,12 @@ Math.random() | adj 随机的 |  返回一个[0, 1)直接的随机数，包头�
 - 随机返回数据中的任意一项
 
   ```js
-  function getRandomItem (arr) {
-    var randomIndex = Math.floor(Math.random() * arr.length)
+  function getRandomItem(arr) {
+    const randomIndex = Math.floor(Math.random() * arr.length)
     return arr[randomIndex]
   }
 
-  var arr = ['Yes', 'No', 'Maybe']
+  const arr = ['Yes', 'No', 'Maybe']
   console.log(getRandomItem (arr)) // 随机返回数据中的任意一项
   ```
 
@@ -24,7 +24,7 @@ Math.random() | adj 随机的 |  返回一个[0, 1)直接的随机数，包头�
 
   ```js
   function getRandomArbitrary(min, max) {
-    return Math.random() * (max - min) + min;
+    return Math.random() * (max - min) + min
   }
   console.log(getRandomArbitrary(4.3, 5.6)) // 得到[4.3, 5.6)间的随机数
   ```
@@ -33,9 +33,9 @@ Math.random() | adj 随机的 |  返回一个[0, 1)直接的随机数，包头�
 
   ```js
   function getRandomInt(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min)) + min; //不含最大值，含最小值
+    min = Math.ceil(min)
+    max = Math.floor(max)
+    return Math.floor(Math.random() * (max - min)) + min // 不含最大值，含最小值
   }
   ```
 
@@ -43,8 +43,8 @@ Math.random() | adj 随机的 |  返回一个[0, 1)直接的随机数，包头�
 
   ```js
   function getRandomIntInclusive(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1)) + min; //含最大值，含最小值
+    min = Math.ceil(min)
+    max = Math.floor(max)
+    return Math.floor(Math.random() * (max - min + 1)) + min // 含最大值，含最小值
   }
   ```

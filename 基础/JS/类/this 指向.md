@@ -7,6 +7,7 @@ class Logger {
   printName(name = 'there') {
     this.print(`Hello ${name}`)
   }
+
   print(text) {
     console.log(text)
   }
@@ -22,7 +23,6 @@ printName() // Uncaught TypeError: Cannot read property 'print' of undefined
 
 ![01](https://image.newarea.site/20230803/01.png)
 
-
 在构造函数中执行 `this.printName = this.printName.bind(this)`，使实例本身也具有 printName 方法，通过 bind 方法，实例本身的 printName 方法中的 this 被永久的绑定到 bind 方法的第一个参数（即实例本身），从而可以找到 print 方法。
 
 ```js
@@ -30,9 +30,11 @@ class Logger {
   constructor() {
     this.printName = this.printName.bind(this)
   }
+
   printName(name = 'there') {
     this.print(`Hello ${name}`)
   }
+
   print(text) {
     console.log(text)
   }
@@ -56,15 +58,16 @@ class Person {
     this.name = name
     this.age = age
   }
+
   speak() {
     console.log(this.name)
   }
 }
 const p = new Person('Callback', 27)
-p.speak(); // Callback
+p.speak() // Callback
 
 const f = p.speak
-var name = 'Jack'
+const name = 'Jack'
 f() // Cannot read properties of undefined (reading 'name')
 ```
 

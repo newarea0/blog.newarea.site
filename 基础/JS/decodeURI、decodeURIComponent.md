@@ -1,4 +1,4 @@
-# decodeURI、decodeURIComponent 区别
+# decodeURI、decodeURIComponent
 
 `encodeURIComponent()` 与 `encodeURI()` 相比，会编码更多的字符。
 
@@ -20,13 +20,13 @@ encodeURI/decodeURI
 例如，现在需要调用后台 GET 请求 `http://www.xxx.com`，并传入参数 `country`（`中国#cn`），如果使用 `encodeURI`：
 
 ```js
-var url = 'http://www.xxx.com?country=' + encodeURI('中国#cn')
+const url = `http://www.xxx.com?country=${encodeURI('中国#cn')}`
 console.log(url) // http://www.xxx.com?country=%E4%B8%AD%E5%9B%BD#cn
 ```
 
 后端获取到的 `country` 为 `%E4%B8%AD%E5%9B%BD`，经解码得到的是 `中国`，显然不是要传的 `中国#cn`。使用 `encodeURIComponent` 即可解决该问题：
 
 ```js
-var url = 'http://www.xxx.com?country=' + encodeURIComponent('中国#cn')
+const url = `http://www.xxx.com?country=${encodeURIComponent('中国#cn')}`
 console.log(url) // http://www.xxx.com?country=%E4%B8%AD%E5%9B%BD%23cn
 ```

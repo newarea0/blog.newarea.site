@@ -1,36 +1,29 @@
-# 在 HTML 中使用模块
-
-## type="module"
+# 在 HTML 中使用 ES6 模块语法
 
 在 `<script>` 标签中写 JavaScript  代码，或者使用 src 引入 JavaScript  文件时，默认不能使用 ES6 中的模块语法。除非在 `<script>` 标签上加 `type="module"`，声明这个脚本是一个 JavaScript  模块。
 
 假如有个示例项目 module-demo，文件结构：
 
 ```plain
+module-demo/
 index.html
 index.js
 module.js
 ```
+::: code-group
 
-module.js
-
-```js
+```js [module.js]
 export default function add(a, b) {
   return a + b
 }
 ```
 
-index.js
-
-```js
+```js [index.js]
 import add from './module.js'
 console.log(add(1, 2))
 ```
 
-index.html
-
-```html
-// index.html
+```html [index.html]
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,12 +37,13 @@ index.html
     import add from './module.js';
     console.log(add(1, 2))
   </script>
- 
- <!-- 方法 2 ： 直接引入 index.js，使用src引入 -->
+
+  <!-- 方法 2 ： 直接引入 index.js，使用src引入 -->
   <script type="module" src="./index.js"></script>
 </body>
 </html>
 ```
+:::
 
 注意 index.html 必须通过本地服务的方式访问，不能通过 “file:///” 的形式访问。
 
@@ -69,8 +63,8 @@ index.html
 检测是否支持导入映射：
 
 ```js
-if (HTMLScriptElement.supports?.("importmap")) {
-  console.log("Browser supports import maps.");
+if (HTMLScriptElement.supports?.('importmap')) {
+  console.log('Browser supports import maps.')
 }
 ```
 
@@ -89,5 +83,5 @@ if (HTMLScriptElement.supports?.("importmap")) {
 则可以使用如下方式导入模块 `module.js`。
 
 ```js
-import add from 'module'
+import add from 'node:module'
 ```

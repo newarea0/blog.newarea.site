@@ -1,4 +1,4 @@
-# 表单的input、change事件
+# input、change 事件
 
 [HTMLElement: input event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)
 

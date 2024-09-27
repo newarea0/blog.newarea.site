@@ -1,4 +1,4 @@
-# mouseover 和 mouseenter
+# mouseover、mouseenter
 
 mouseover: 给元素绑定 mouseover 事件，当鼠标移入元素、或其子元素（由于事件冒泡）时会触发该事件。若外层元素有子元素，则鼠标在该元素内移动时，可能多次触发绑定在外层元素上的mouseover事件。相对立的是 mouseout。
 

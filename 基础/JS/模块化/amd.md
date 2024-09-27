@@ -2,7 +2,7 @@
 
 > 基于浏览器的模块化
 
-因为 CommonJS 规范一些特性（基于文件系统，同步加载），它并不适用于浏览器端，所以另外定义了适用于浏览器端的规范 
+因为 CommonJS 规范一些特性（基于文件系统，同步加载），它并不适用于浏览器端，所以另外定义了适用于浏览器端的规范
 
  `AMD(Asynchronous Module Definition)`
 
@@ -25,7 +25,7 @@ https://requirejs.org/
 
 ```javascript
 // b.js
-define(function() {
+define(() => {
   // 模块内部代码
 })
 ```
@@ -36,12 +36,12 @@ define(function() {
 
 ```javascript
 // b.js
-define(function() {
-  let a = 1;
-	let b = 2;
+define(() => {
+  const a = 1
+  const b = 2
   return {
     x: a,
-  	y: b
+    y: b
   }
 })
 ```
@@ -53,8 +53,8 @@ define(function() {
 ```javascript
 // a.js
 // 定义一个模块，并导入 ./b 模块
-define(['./b'], function(b) {
-	console.log(b);
+define(['./b'], (b) => {
+  console.log(b)
 })
 ```
 
@@ -66,9 +66,9 @@ define(['./b'], function(b) {
 
 ```javascript
 // b.js
-define(function(require, exports, module) {
-  let a = 1;
-	let b = 2;
+define((require, exports, module) => {
+  const a = 1
+  const b = 2
   module.exports = {
     x: a,
     y: b
@@ -80,8 +80,8 @@ define(function(require, exports, module) {
 
 ```javascript
 // a.js
-define(function(require, exports, module) {
-  let b = require('./b')
-  console.log(b);
+define((require, exports, module) => {
+  const b = require('./b')
+  console.log(b)
 })
 ```

@@ -63,14 +63,14 @@ how
 
 ```js
 // 1. 创建项目文件夹
-fs.mkdirSync(getRootPath());
+fs.mkdirSync(getRootPath())
 // 2. 创建 index.js
-fs.writeFileSync(`${getRootPath()}/index.js`, "index");
+fs.writeFileSync(`${getRootPath()}/index.js`, 'index')
 // 3. 创建 package.json
 fs.writeFileSync(
   `${getRootPath()}/package.json`,
-  "package"
-);
+  'package'
+)
 // 4. 安装依赖
 TODO
 ```
@@ -108,21 +108,21 @@ app.listen(<%= port %>, () => {
 
 ```js
 // createIndexTemplate.js
-import ejs from "ejs";
-import path from "path";
-import fs from "fs";
-import { fileURLToPath } from "url";
+import path from 'node:path'
+import fs from 'node:fs'
+import { fileURLToPath } from 'node:url'
+import ejs from 'ejs'
 
 export default (config) => {
-  const __dirname = fileURLToPath(import.meta.url);
+  const __dirname = fileURLToPath(import.meta.url)
   const templateCode = fs.readFileSync(
-    path.resolve(__dirname, "../template/index.ejs")
-  );
+    path.resolve(__dirname, '../template/index.ejs')
+  )
   return ejs.render(templateCode.toString(), {
     middleware: config.middleware,
     port: config.port,
-  });
-};
+  })
+}
 ```
 
 而这里的 config 是需要基于用户来生成的
@@ -170,10 +170,10 @@ execa("yarn", {
 ```js
 // questions/index.js
 
-import inquirer from "inquirer";
-import packageName from "./packageName.js";
-import port from "./port.js";
-import middleware from "./middleware.js";
+import inquirer from 'inquirer'
+import packageName from './packageName.js'
+import port from './port.js'
+import middleware from './middleware.js'
 
 export default () => {
   return inquirer.prompt([
@@ -181,63 +181,63 @@ export default () => {
     packageName(),
     port(),
     middleware(),
-  ]);
-};
+  ])
+}
 ```
 
 ```js
 // .packageName.js
 export default () => {
   return {
-    type: "input",
-    name: "packageName",
-    message: "set package name",
+    type: 'input',
+    name: 'packageName',
+    message: 'set package name',
     validate(val) {
-      if (val) return true;
-      return "Please enter package name";
+      if (val)
+        return true
+      return 'Please enter package name'
     },
-  };
-};
+  }
+}
 ```
 
 ```js
 // ./port.js
 export default () => {
   return {
-    type: "input",
-    name: "port",
-    message: "set server port number",
+    type: 'input',
+    name: 'port',
+    message: 'set server port number',
     default() {
-      return 8000;
+      return 8000
     },
-  };
-};
-
+  }
+}
 ```
 
 ```js
 // ./middleware.js
 export default () => {
   return {
-    type: "checkbox",
-    message: "select middleware",
-    name: "middleware",
+    type: 'checkbox',
+    message: 'select middleware',
+    name: 'middleware',
     choices: [
       {
-        name: "koaRouter",
+        name: 'koaRouter',
       },
       {
-        name: "koaStatic",
+        name: 'koaStatic',
       },
       {
-        name: "koaViews",
+        name: 'koaViews',
       },
       {
-        name: "koaBody",
+        name: 'koaBody',
       },
     ],
-  };
-};
+  }
+}
 ```
 
 packageName.js、port.js、middleware.js 其实就是对 inquirer 定义问题配置的封装，在实现代码的时候，不光要实现功能，还需要考虑到维护性以及代码的可读性，遵守单一职责，时时刻刻对代码进行重构
@@ -245,11 +245,11 @@ packageName.js、port.js、middleware.js 其实就是对 inquirer 定义问题�
 最后我们在 index.js 进行对 questions/index.js 的调用
 
 ```js
-import questions from "./questions/index.js";
-import { createConfig } from "./config.js";
+import questions from './questions/index.js'
+import { createConfig } from './config.js'
 
-const answer = await questions();
-const config = createConfig(answer);
+const answer = await questions()
+const config = createConfig(answer)
 ```
 
 这里的 config 就是基于用户的选项来生成的配置，不过这里还会涉及到另外一个组织代码的方式，就是需要把程序的主逻辑和程序的输入和输出分离。
@@ -262,20 +262,20 @@ const config = createConfig(answer);
 export function createConfig(answer) {
   // 适配器
   const haveMiddleware = (name) => {
-    return answer.middleware.indexOf(name) !== -1;
-  };
+    return answer.middleware.includes(name)
+  }
   const inputConfig = {
     packageName: answer.packageName,
     port: answer.port,
     middleware: {
-      static: haveMiddleware("koaStatic"),
-      views: haveMiddleware("koaViews"),
-      router: haveMiddleware("koaRouter"),
-      body: haveMiddleware("koaBody"),
+      static: haveMiddleware('koaStatic'),
+      views: haveMiddleware('koaViews'),
+      router: haveMiddleware('koaRouter'),
+      body: haveMiddleware('koaBody'),
     },
-  };
+  }
 
-  return inputConfig;
+  return inputConfig
 }
 ```
 

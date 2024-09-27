@@ -1,6 +1,4 @@
-# 模块
-
-[MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Modules)
+# ES6 模块
 
 一个模块就是一个独立的文件。该文件内部的所有变量，外部无法获取。如果你希望外部能够读取模块内部的某个变量，就必须输出该变量（作为一个接口暴露出去）
 
@@ -13,7 +11,7 @@
 ```js
 // 模块中可以有多个export, 但最多只能有一个export default
 export const name = 'Jack' // export用法1，直接输出接口，export后直接跟变量声明语句
-export const run = () => {
+export function run() {
   console.log('I can run')
 }
 
@@ -48,7 +46,7 @@ export default {
 
 ```js
 // modules.js
-function add (x, y) {
+function add(x, y) {
   return x * y
 }
 export { add as default } // 等同于 export default add
@@ -66,7 +64,7 @@ import { default as foo } from 'modules' // 等同于 import foo from 'modules'
 
   ```js
   export default function printMe() {
-    console.log('I get called from print.js!');
+    console.log('I get called from print.js!')
   }
   ```
 
@@ -105,3 +103,8 @@ import { default as foo } from 'modules' // 等同于 import foo from 'modules'
 import 后面的 from 指定模块文件的位置，可以是相对路径，也可以是绝对路径，.js后缀可以省略。如果只是模块名，不带有路径，那么必须有配置文件，告诉 JavaScript 引擎该模块的位置。
 `import { myMethod } from 'util'`
 上面代码中，util是模块文件名，由于不带有路径，必须通过配置，告诉引擎怎么取到这个模块（**如果使用webpack，其会帮我们做这个工作**）
+
+参考：
+
+- [MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Modules)
+- [阮一峰](http://www.ruanyifeng.com/blog/2020/08/javascript-module-intro.html)

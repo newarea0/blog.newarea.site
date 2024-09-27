@@ -1,15 +1,15 @@
-# for循环语句的执行顺序和优化
+# for 循环
 
 ```js
-for(为循环做的准备工作; 循环可以执行的条件; 代码主体执行后做的工作) {
-   // 代码主体
+for (为循环做的准备工作; 循环可以执行的条件; 代码主体执行后做的工作) {
+  // 代码主体
 }
 ```
 
 ```js
-var sum=0;
-var array=[1, 2, 3, 4, 5, 6, 7, 8, 9]
-for(var i = 0, len = array.length; i < len; i++) {
+let sum = 0
+const array = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+for (var i = 0, len = array.length; i < len; i++) {
   sum += array[i]
 }
 console.log(i) // 9
@@ -39,7 +39,7 @@ console.log(i) // 9，可以发现在“为循环做的准备工作”中定义�
 因为“为循环做的准备工作”中定义的变量变为全局变量，因此准备工作部分没有必要非要在小括号中完成
 
 ```js
-var i = 0
+let i = 0
 for (;i < 9; i++) {
   console.log('hello')
 }
@@ -58,8 +58,8 @@ console.log(i)
 - forEach是函数，不能使用continue和break中断循环，可以使用return中断一次循环，throw中断后续循环
 
 ```js
-let a = [1, 2, 3, 4]
-for (var i = 0; i < a.length; i++) {
+const a = [1, 2, 3, 4]
+for (let i = 0; i < a.length; i++) {
   if (i === 2) {
     // break // 打印结果：1
     continue // 打印结果：124
@@ -68,14 +68,15 @@ for (var i = 0; i < a.length; i++) {
 }
 try {
   // 需要使用trycatch包裹，避免影响其他代码执行
-  a.forEach(element => {
+  a.forEach((element) => {
     if (element === 2) {
       // return  // 中断一次循环，打印结果：124
-      throw new Error('中断循环')  // 中断后续循环，打印结果：1
+      throw new Error('中断循环') // 中断后续循环，打印结果：1
     }
     console.log(element)
   })
-} catch (error) {}
+}
+catch (error) {}
 ```
 
 ### 处理 async/await 方式不同

@@ -1,7 +1,5 @@
 # FormData
 
-[MDN FormData](https://developer.mozilla.org/zh-CN/docs/Web/API/FormData)
-
 ```html
 <div>
   <p>姓名 <input type="text" id="name"></p>
@@ -39,3 +37,7 @@
   })
 </script>
 ```
+
+参考
+
+[FormData](https://developer.mozilla.org/zh-CN/docs/Web/API/FormData)

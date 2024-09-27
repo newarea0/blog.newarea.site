@@ -1,4 +1,4 @@
-# Blob URL 和 Data URL的区别
+# Blob URL 和 Data URL 的区别
 
 [细说Web API中的Blob](https://www.jianshu.com/p/4d014a45aaf7)
 

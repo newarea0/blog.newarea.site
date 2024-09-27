@@ -1,4 +1,4 @@
-# 编写cli命令行
+# npm cli
 
 [npm link的使用](https://www.jianshu.com/p/aaa7db89a5b2)
 [手把手教你使用nodejs编写cli(命令行)](https://www.jianshu.com/p/095c968d406f)

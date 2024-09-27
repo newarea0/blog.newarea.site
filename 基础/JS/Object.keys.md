@@ -1,4 +1,4 @@
-# Object.keys()的顺序问题及参数解析
+# Object.keys
 
 ## 1 参数为对象
 
@@ -9,39 +9,39 @@
 ```js
 // 属性为字符（串）
 Object.keys({
-  c: 11, 
-  bb: 22, 
+  c: 11,
+  bb: 22,
   a: 33
 })
 // output: ["c", "bb", "a"]
 
 // 属性为数字
 Object.keys({
-  2: 'aa', 
-  1: 'cc', 
+  2: 'aa',
+  1: 'cc',
   3: 'bb'
 })
 // output: ["1", "2", "3"]
 
 // 属性有字符串、数字
 Object.keys({
-  2: 'aa', 
-  f: 5, 
-  1: 'cc', 
-  d: 4, 
+  2: 'aa',
+  f: 5,
+  1: 'cc',
+  d: 4,
   3: 'bb'
 })
 // output: ["1", "2", "3", "f", "d"]
 
 // 特殊示例：属性有字符串、负数、正数、大于2^32-1的数
 Object.keys({
-  2: 'aa', 
-  f: 5, 
-  1: 'd',
-  4294967295: 'cc',  // 2^32 - 1
-  d: 4, 
+  '2': 'aa',
+  'f': 5,
+  '1': 'd',
+  '4294967295': 'cc', // 2^32 - 1
+  'd': 4,
   '-3': 'bb',
-  4294967294: 'cc',  // 2^32 - 2
+  '4294967294': 'cc', // 2^32 - 2
 })
 // output: ["1", "2", "4294967294", "f", "4294967295", "d", "-3"]
 ```
@@ -73,8 +73,8 @@ Object.keys('ghjgvjh')
 返回空数组，因为不可迭代
 
 ```js
-Object.keys(true)			// output: []
-Object.keys(312)			// output: []
+Object.keys(true) // output: []
+Object.keys(312) // output: []
 Object.keys(BigInt(546))	// output: []
 Object.keys(Symbol('sa54'))	// output: []
 ```
