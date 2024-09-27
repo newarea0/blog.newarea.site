@@ -1,6 +1,4 @@
-# 理解CSS属性flex值为1
-
-[【CSS】由 flex: 1; 引发的思考](https://blog.csdn.net/u013451157/article/details/79011679)
+# flex 属性值简写
 
 `flex` 属性是 `flex-grow`、`flex-shrink` 和 `flex-basis` 的简写，flex 属性值可以由一部分组成，也可以由两部分组成，或者是三部分组成，其中
 
@@ -245,3 +243,7 @@
 页面效果：
 
 ![03](https://image.newarea.site/20230725/03.png)
+
+## 参考
+
+- [【CSS】由 flex: 1; 引发的思考](https://blog.csdn.net/u013451157/article/details/79011679)

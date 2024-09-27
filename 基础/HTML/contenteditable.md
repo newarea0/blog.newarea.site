@@ -36,7 +36,7 @@
 
 以下是一个完整的示例，展示了如何使用 `contentEditable` 属性：
 
-```html:index.html
+```html
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>

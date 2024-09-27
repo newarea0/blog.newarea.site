@@ -1,7 +1,5 @@
 # width、flex-basis、min-widht、max-width的区别
 
-[Flex Basis与Width的区别](https://www.jianshu.com/p/17b1b445ecd4)
-
 Flex 项目默认在容器中不换行水平排列，项目的 `flex-basis` 表示项目在被放进一个 flex 容器之前的宽度，即项目不伸缩时的初始宽度。
 
 当所有项目的初始宽度之和小于容器宽度时，如果项目 `flex-grow` 不为 `0`，项目就会伸长。项目最终的宽度 = 初始宽度 + 伸长的宽度。
@@ -153,3 +151,7 @@ items 完全填充了flex 容器：
 ![13](https://image.newarea.site/20230725/13.webp)
 
 以上这些设置同样适用于 `height` 属性，当你将 `flex-direction` 设置为 `column` 或者`column-reverse` 的时候。
+
+## 参考
+
+- [Flex Basis与Width的区别](https://www.jianshu.com/p/17b1b445ecd4)

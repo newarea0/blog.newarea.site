@@ -1,4 +1,4 @@
-# flex-wrap 为 wrap 和 flex-shrink 为1
+# flex-wrap、flex-shrink
 
 ## 1 flex 布局
 

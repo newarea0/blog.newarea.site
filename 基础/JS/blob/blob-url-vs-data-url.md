@@ -5,17 +5,17 @@
 1. Blob URL的长度一般比较短，但Data URL因为直接存储图片base64编码后的数据，往往很长，如上图所示，浏览器在显示Data URL时使用了省略号（…）。当显式大图片时，使用Blob URL能获取更好的可能性。
 
 2. Blob URL可以方便的使用XMLHttpRequest获取源数据，例如：
-  
+
     ```js
-    var blobUrl = URL.createObjectURL(new Blob(['Test'], {type: 'text/plain'}));
-    var x = new XMLHttpRequest();
+    const blobUrl = URL.createObjectURL(new Blob(['Test'], { type: 'text/plain' }))
+    const x = new XMLHttpRequest()
     // 如果设置x.responseType = 'blob'，将返回一个Blob对象，而不是文本:
     // x.responseType = 'blob';
-    x.onload = function() {
-        alert(x.responseText);   // 输出 Test
-    };
-    x.open('get', blobUrl);
-    x.send();
+    x.onload = function () {
+      alert(x.responseText) // 输出 Test
+    }
+    x.open('get', blobUrl)
+    x.send()
     ```
 
     对于Data URL，并不是所有浏览器都支持通过XMLHttpRequest获取源数据的。
@@ -26,14 +26,14 @@
 
 ```js
 // 创建HTML文件的Blob URL
-var data = "<div style='color:red;'>This is a blob</div>";
-var blob = new Blob([data], { type: 'text/html' });
-var blobURL = URL.createObjectURL(blob);
+var data = '<div style=\'color:red;\'>This is a blob</div>'
+var blob = new Blob([data], { type: 'text/html' })
+var blobURL = URL.createObjectURL(blob)
 
 // 创建JSON文件的Blob URL
-var data = { "name": "abc" };
-var blob = new Blob([JSON.stringify(data)], { type: 'application/json' });
-var blobURL = URL.createObjectURL(blob);
+var data = { name: 'abc' }
+var blob = new Blob([JSON.stringify(data)], { type: 'application/json' })
+var blobURL = URL.createObjectURL(blob)
 ```
 
 ## 1 Blob URL
@@ -111,7 +111,7 @@ Web性能优化中有一项措施：把小图片用base64编码直接嵌入到HT
 [URL.createObjectURL()](https://developer.mozilla.org/zh-CN/docs/Web/API/URL/createObjectURL)
 [URL.revokeObjectURL()](https://developer.mozilla.org/zh-CN/docs/Web/API/URL/revokeObjectURL)
 
-静态方法 URL.createObjectURL(obj) 返回一个 url，字符串类型，用于指定参数 obj。参数 obj 可以是 File 对象、Blob 对象或者 MediaSource 对象。​
+静态方法 URL.createObjectURL(obj) 返回一个 url，字符串类型，用于指定参数 obj。参数 obj 可以是 File 对象、Blob 对象或者 MediaSource 对象。
 
 ```html
 <!DOCTYPE html>

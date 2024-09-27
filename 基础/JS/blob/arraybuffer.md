@@ -18,7 +18,6 @@ File 接口基于 Blob，继承了 Blob 的所有属性和方法，File 对象�
 
 ![03](https://image.newarea.site/20230802/03.png)
 
-
 [MDN Blob](https://developer.mozilla.org/zh-CN/docs/Web/API/Blob)
 
 [MDN File](https://developer.mozilla.org/zh-CN/docs/Web/API/File)
