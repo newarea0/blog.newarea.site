@@ -49,3 +49,7 @@ package.js
 ```
 
 执行 `npm run dev`，控制台输出 `one`
+
+参考
+
+[github](https://github.com/kentcdodds/cross-env)

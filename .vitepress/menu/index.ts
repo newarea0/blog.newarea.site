@@ -7,11 +7,11 @@ import { toolSidebar } from './tool'
 
 export const nav = [
   { text: '基础', link: '/基础/HTML/contenteditable', activeMatch: '/基础/' },
-  { text: '框架', link: '/框架/Vue/常用类型', activeMatch: '/框架/' },
-  { text: '工具', link: '/工具/宝塔面板/新建站点', activeMatch: '/工具/' },
-  { text: '依赖包', link: '/依赖包/客户端/Async%20Validate', activeMatch: '/依赖包/' },
-  { text: '构建工具', link: '/构建工具/Vite/部署', activeMatch: '/构建工具/' },
-  { text: '规范化', link: '/规范化/中文排版', activeMatch: '/规范化/' },
+  { text: '框架', link: '/框架/Vue/响应式/reactive', activeMatch: '/框架/' },
+  { text: '工具', link: '/工具/Docker/安装', activeMatch: '/工具/' },
+  { text: '依赖包', link: '/依赖包/客户端/async-validator', activeMatch: '/依赖包/' },
+  { text: '构建工具', link: '/构建工具/Vite/依赖预构建', activeMatch: '/构建工具/' },
+  { text: '规范化', link: '/规范化/ESLint/概览', activeMatch: '/规范化/' },
   {
     text: '关于',
     items: [

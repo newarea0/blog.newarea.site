@@ -1,4 +1,4 @@
-# package-lock.json
+# package-lock
 
 > `dependencies` 是一个对象，对象和 `node_modules` 中的包结构一一对应，对象的 `key` 为包名称，值为包的一些描述信息：
 

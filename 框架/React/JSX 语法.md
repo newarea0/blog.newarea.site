@@ -1,4 +1,4 @@
-# React JSX 基础语法
+JSX 语法
 
 ## 1、什么是 JSX
 

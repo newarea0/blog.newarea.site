@@ -3,7 +3,7 @@ import type { DefaultTheme } from 'vitepress'
 export const buildToolSidebar: DefaultTheme.SidebarItem[] = [
   {
     text: 'Vite',
-    collapsed: false,
+    collapsed: true,
     items: [
       { text: '依赖预构建', link: 'Vite/依赖预构建' },
       {

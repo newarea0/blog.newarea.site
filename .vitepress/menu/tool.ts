@@ -1,17 +1,14 @@
 import type { DefaultTheme } from 'vitepress'
 
 export const toolSidebar: DefaultTheme.SidebarItem[] = [
-  { text: 'Charles', link: 'Charles' },
-  { text: 'Cloudflare', link: 'Cloudflare' },
-  { text: 'Cursor', link: 'Cursor' },
   {
     text: 'Docker',
-    collapsed: false,
+    collapsed: true,
     items: [
+      { text: '安装', link: 'Docker/安装' },
       { text: '命令实战', link: 'Docker/命令实战' },
       { text: '基本概念', link: 'Docker/基本概念' },
       { text: '安装 copy', link: 'Docker/安装 copy' },
-      { text: '安装', link: 'Docker/安装' },
       { text: '常用命令', link: 'Docker/常用命令' },
     ],
   },
@@ -19,9 +16,8 @@ export const toolSidebar: DefaultTheme.SidebarItem[] = [
     text: 'Git',
     collapsed: true,
     items: [
-      { text: 'git-flow', link: 'Git/git-flow' },
-      { text: 'git-flow1', link: 'Git/git-flow1' },
-      { text: 'how-git-work', link: 'Git/how-git-work' },
+      { text: 'git flow', link: 'Git/git flow' },
+      { text: 'git 分支管理策略', link: 'Git/git 分支管理策略' },
       { text: 'pull、fetch', link: 'Git/pull、fetch' },
       { text: 'reset、revert', link: 'Git/reset、revert' },
       { text: 'stash', link: 'Git/stash' },
@@ -55,7 +51,7 @@ export const toolSidebar: DefaultTheme.SidebarItem[] = [
     text: 'Linux',
     collapsed: true,
     items: [
-      { text: '概述', link: 'Linux/概述' },
+      { text: '1.概述', link: 'Linux/1.概述' },
       { text: 'find、whereis、where', link: 'Linux/find、whereis、where' },
       { text: 'vim', link: 'Linux/vim' },
       { text: '定时任务', link: 'Linux/定时任务' },
@@ -85,7 +81,6 @@ export const toolSidebar: DefaultTheme.SidebarItem[] = [
       { text: '防火墙', link: 'Linux/防火墙' },
     ],
   },
-  { text: 'logo-favicon', link: 'logo-favicon' },
   {
     text: 'MAC',
     collapsed: true,
@@ -101,12 +96,10 @@ export const toolSidebar: DefaultTheme.SidebarItem[] = [
       { text: '基础使用', link: 'Nginx/基础使用' },
       { text: '安装', link: 'Nginx/安装' },
       { text: '指令', link: 'Nginx/指令' },
-      { text: '虚拟主机', link: 'Nginx/虚拟主机' },
       { text: '部署多个应用', link: 'Nginx/部署多个应用' },
       { text: '重定向到 HTTTPS', link: 'Nginx/重定向到 HTTTPS' },
     ],
   },
-  { text: 'vanblog', link: 'vanblog' },
   {
     text: 'VSCode',
     collapsed: true,
@@ -130,8 +123,6 @@ export const toolSidebar: DefaultTheme.SidebarItem[] = [
       { text: '清理右键菜单', link: 'Windows/清理右键菜单' },
     ],
   },
-  { text: 'xftp', link: 'xftp' },
-  { text: 'xshell', link: 'xshell' },
   {
     text: '云服务',
     collapsed: true,
@@ -152,7 +143,6 @@ export const toolSidebar: DefaultTheme.SidebarItem[] = [
       { text: '新建站点', link: '宝塔面板/新建站点' },
     ],
   },
-  { text: '数字签名与数字证书', link: '数字签名与数字证书' },
   {
     text: '谷歌浏览器',
     collapsed: true,
@@ -171,4 +161,13 @@ export const toolSidebar: DefaultTheme.SidebarItem[] = [
       { text: '集成 Algolia', link: '静态站点/集成 Algolia' },
     ],
   },
+
+  { text: 'Cursor', link: 'Cursor' },
+  { text: 'xftp', link: 'xftp' },
+  { text: 'xshell', link: 'xshell' },
+  { text: 'vanblog', link: 'vanblog' },
+  { text: 'Charles', link: 'Charles' },
+  { text: 'Cloudflare', link: 'Cloudflare' },
+  { text: '制作 logo、favicon', link: '制作 logo、favicon' },
+  { text: '数字签名与数字证书', link: '数字签名与数字证书' },
 ]

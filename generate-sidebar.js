@@ -3,7 +3,7 @@
 
 // 使用方法：
 // 1. 将此脚本放置在项目根目录
-// 2. 在终端中运行： node generate-sidebar.js 目录名 输出文件路径，例如: node .\generate-sidebar.js 基础 .\.vitepress\sidebars\basic.ts
+// 2. 在终端中运行： node generate-sidebar.js 目录名 输出文件路径，例如: node .\generate-sidebar.js .\依赖包\ .\.vitepress\menu\package.ts
 // 3. 脚本将扫描 基础 目录下的所有 .md 文件，生成侧边栏配置
 // 4. 生成的配置将保存在 .\.vitepress\sidebars\basic.ts 文件中
 

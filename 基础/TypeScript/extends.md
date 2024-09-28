@@ -1,4 +1,4 @@
-# TypeScript 中的 extends 关键字
+# extends
 
 extends 关键字在 TypeScript 中经常用到，在不同场景下含义不同，总结如下：
 

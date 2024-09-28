@@ -19,18 +19,18 @@ _.uniq([1, 1, 2, 2, 3]) // [1, 2, 3]
 ### remove
 
 ```js
-/** 
- * @param {array} array - 表示要修改的数组
+/**
+ * @param {Array} array - 表示要修改的数组
  * @param {Function} [predicate=_.identity] - 为数组中的每个元素执行的函数，如果返回真值，则该元素被移除，函数执行时会传入 3 个参数：value, index, array
  */
-_.remove(array, [predicate=_.identity])
+_.remove(array, [predicate = _.identity])
 ```
 
 移除数组中满足条件的所有元素，并返回移除元素组成的数组。**注意该方法会修改原数组**。
 
 ```js
-var array = [1, 2, 3, 4];
-var evens = _.remove(array, item => item % 2 === 0);
+const array = [1, 2, 3, 4]
+const evens = _.remove(array, item => item % 2 === 0)
 console.log(array) // [1, 3]
 console.log(evens) // [2, 4]
 ```
@@ -52,9 +52,8 @@ _.difference([1, 2, 3, 4], [3, 4]) // [1, 2]
 与 `_.pick` 相反，创建一个由 object 中剔除选中属性后组成的新对象。
 
 ```js
+const object = { a: 1, b: '2', c: 3 }
 
-var object = { 'a': 1, 'b': '2', 'c': 3 }
- 
 _.omit(object, ['a', 'c']) // { 'b': '2' }
 ```
 
@@ -97,10 +96,10 @@ console.log(_.groupBy(users, age))
 ```
 
 ```js
-const numbers = [1, 2, 3, 4, 5, 6];
+const numbers = [1, 2, 3, 4, 5, 6]
 // 将数组 numbers 按奇数偶数分组
-const result = _.groupBy(numbers, (num) => num % 2=== 0 ? 'even': 'odd');
-console.log(result);
+const result = _.groupBy(numbers, num => num % 2 === 0 ? 'even' : 'odd')
+console.log(result)
 /*
 {
   odd: [1, 3, 5],
@@ -123,19 +122,19 @@ _.isPlainObject(value)
 
 ```js
 function Foo() {
-  this.a = 1;
+  this.a = 1
 }
- 
-_.isPlainObject(new Foo);
+
+_.isPlainObject(new Foo())
 // => false
- 
-_.isPlainObject([1, 2, 3]);
+
+_.isPlainObject([1, 2, 3])
 // => false
- 
-_.isPlainObject({ 'x': 0, 'y': 0 });
+
+_.isPlainObject({ x: 0, y: 0 })
 // => true
- 
-_.isPlainObject(Object.create(null));
+
+_.isPlainObject(Object.create(null))
 // => true
 ```
 
@@ -176,7 +175,7 @@ const isEmpty = Object.keys(o).length === 0
 
 ```js
 /**
- * @param {Object} object - 来源对象
+ * @param {object} object - 来源对象
  * @param {string|string[]} [props] - 来源对象
  */
 _.pick(object, [props])
@@ -185,8 +184,8 @@ _.pick(object, [props])
 创建一个由 object 中选中属性组成的新对象。
 
 ```js
-var object = { 'a': 1, 'b': '2', 'c': 3 }
- 
+const object = { a: 1, b: '2', c: 3 }
+
 _.pick(object, ['a', 'c']) // { 'a': 1, 'c': 3 }
 ```
 
@@ -200,7 +199,7 @@ _.pick(object, ['a', 'c']) // { 'a': 1, 'c': 3 }
  * @param {number} precision 四舍五入的精度
  * @returns {number}
  */
-_.round(number, [precision=0])
+_.round(number, [precision = 0])
 ```
 
 将一个参数（数字、字符串）四舍五入到指定的精度。注意第一参数可以是数字或者字符串，返回值为数字。
@@ -208,10 +207,10 @@ _.round(number, [precision=0])
 该函数作用类似于 `Number.prototype.toFixed()`，但 `round` 比 `toFixed` 更灵活、方便，因为 `toFixed` 只能用于数字，且返回值为字符串。
 
 ```js
-_.round(4.006);
+_.round(4.006)
 // => 4
- 
-_.round(4.006, 2);
+
+_.round(4.006, 2)
 // => 4.01
 
 _.round('4.006', 2)

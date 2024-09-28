@@ -70,7 +70,7 @@ npm test
 
 添加git hooks，运行一下命令创建git hooks
 
-`npx husky add .husky/commit-msg 'npx --no-install commitlint --edit "$1"'` 
+`npx husky add .husky/commit-msg 'npx --no-install commitlint --edit "$1"'`
 如果没成功，就执行 `husky add .husky/commit-msg 'npx --no-install commitlint --edit "$1"'`
 或 `.\node_modules\.bin\husky.cmd add .husky/commit-msg 'npx --no-install commitlint --edit "$1"'`
 
