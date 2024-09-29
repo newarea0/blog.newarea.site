@@ -8,7 +8,6 @@ export const toolSidebar: DefaultTheme.SidebarItem[] = [
       { text: '安装', link: 'Docker/安装' },
       { text: '命令实战', link: 'Docker/命令实战' },
       { text: '基本概念', link: 'Docker/基本概念' },
-      { text: '安装 copy', link: 'Docker/安装 copy' },
       { text: '常用命令', link: 'Docker/常用命令' },
     ],
   },
