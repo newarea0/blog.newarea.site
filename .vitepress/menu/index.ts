@@ -5,6 +5,7 @@ import { buildToolSidebar } from './build-tool'
 import { standardizationSidebar } from './standardization'
 import { toolSidebar } from './tool'
 
+// 导航栏
 export const nav = [
   { text: '基础', link: '/基础/HTML/contenteditable', activeMatch: '/基础/' },
   { text: '框架', link: '/框架/Vue/响应式/reactive', activeMatch: '/框架/' },
@@ -21,6 +22,7 @@ export const nav = [
   },
 ]
 
+// 侧边栏
 export const sidebar = {
   '/基础/': { base: '/基础/', items: basicSidebar },
   '/框架/': { base: '/框架/', items: frameworkSidebar },

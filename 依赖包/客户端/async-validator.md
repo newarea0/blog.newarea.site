@@ -1,11 +1,5 @@
 # async-validator
 
-https://www.null123.com/article/detail-482846.html
-
-https://juejin.cn/post/6888681604621795336?searchId=20240619221018B5DE9AD770FFCD07F952
-
-https://www.php.cn/faq/406545.html
-
 ## 1 使用步骤
 
 ```js
@@ -42,7 +36,7 @@ validator.validate({ name: 'muji' }, (errors, fields) => {
     // 校验失败，errors 是一个所有 error 组成的数组；field 是一个对象，键是 field，值是对应的 errors 数组。
     // 校验成功，errors 为 null，fields 为一个与 source 相同的对象
     // ...
-    return
+
   }
   // 校验通过
   // ...
@@ -58,9 +52,9 @@ validator.validate({ name: 'muji' }, (errors, fields) => {
 一个字段一条规则：
 
 ```js
-const rules = { 
+const rules = {
   // ...
-  name: { type: 'string', required: true } 
+  name: { type: 'string', required: true }
 }
 ```
 
@@ -71,7 +65,7 @@ const rules = {
 一个字段多条规则：
 
 ```js
-const rules = { 
+const rules = {
   // ...
   name: [
     { type: 'string' },
@@ -85,7 +79,7 @@ const rules = {
 ### 2.3 函数的方式
 
 ```js
-const rules = { 
+const rules = {
   // ...
   name(rule, value, callback, source, options) {
     // ...
@@ -158,3 +152,6 @@ const source = {
 参考
 
 - [async-validator](https://github.com/yiminghe/async-validator)
+- https://www.null123.com/article/detail-482846.html
+- https://juejin.cn/post/6888681604621795336?searchId=20240619221018B5DE9AD770FFCD07F952
+- https://www.php.cn/faq/406545.html

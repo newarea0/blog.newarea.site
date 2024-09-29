@@ -35,5 +35,14 @@ export const standardizationSidebar: DefaultTheme.SidebarItem[] = [
   { text: 'note', link: 'note' },
   { text: 'stylelint', link: 'stylelint' },
   { text: 'yorkie', link: 'yorkie' },
+  {
+    text: 'Vue 命令技巧',
+    collapsed: true,
+    items: [
+      { text: '文件命令技巧', link: 'Vue 命令技巧/文件命令技巧' },
+      { text: '代码命令技巧', link: 'Vue 命令技巧/代码命令技巧' },
+    ],
+  },
+  { text: '工程命名规范', link: '工程命名规范' },
   { text: '中文排版', link: '中文排版' },
 ]

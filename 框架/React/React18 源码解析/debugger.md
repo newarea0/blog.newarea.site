@@ -94,12 +94,12 @@ export { REACT_FRAGMENT_TYPE as Fragment, jsx, jsxs, jsxDEV }
 如果需要配置未生效时，可以尝试删除node_modules/.vite文件夹，重新启动项目
 
 react 包移动完成后目录如下：
-![react 目录](/images/react/1.png)
+![](https://image.newarea.site/2024-09-29_11-20-01.png)
 
 ### 5. 配置 jsconfig.json
 
 ```js
-// 给vscode编辑器使用
+// 给vscode编辑器使用2024-09-29_11-20-
 {
   "compilerOptions": {
     "baseUrl": "./",
@@ -118,7 +118,7 @@ react 包移动完成后目录如下：
 
 ### 6. 开启 debugger
 
-![debugger](/images/react/7.png)
+![](https://image.newarea.site/2024-09-29_11-20-07.png)
 
 ```js
 {
@@ -152,7 +152,7 @@ yarn dev
 
 报错如下：
 
-![shared/ReactTypes](/images/react/2.png)
+![](https://image.newarea.site/2024-09-29_11-20-02.png)
 
 解决办法：
 
@@ -169,12 +169,14 @@ npx flow-remove-types --out-dir src/react src/react
 ```
 
 执行完成后，如下：
-![flow-remove-types](/images/react/3.png)
+
+![](https://image.newarea.site/2024-09-29_11-20-03.png)
 
 ### 2. No matching export in "src/react/packages/react-dom/client.js" for import "default"
 
 报错如下：
-![react-dom/client](/images/react/4.png)
+
+![](https://image.newarea.site/2024-09-29_11-20-04.png)
 
 解决办法：
 查看 client 文件是 export 到处的，所以需要修改引入方式
@@ -197,7 +199,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 ### 3. The requested module '/src/react/packages/react-reconciler/src/ReactFiberConfig.js' does not provide an export named 'getChildHostContext'
 
 报错如下：
-![react-dom/client](/images/react/5.png)
+
+![](https://image.newarea.site/2024-09-29_11-20-05.png)
 
 解决办法
 src/react/packages/react-reconciler/src/ReactFiberConfig.js 更改后如下：
@@ -232,4 +235,5 @@ export * from './forks/ReactFiberConfig.dom-browser'
 ```
 
 上述问题解决后，就可以正常调试了
-![正常](/images/react/6.png)
+
+![](https://image.newarea.site/2024-09-29_11-20-06.png)
