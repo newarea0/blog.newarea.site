@@ -50,7 +50,7 @@ export const toolSidebar: DefaultTheme.SidebarItem[] = [
     text: 'Linux',
     collapsed: true,
     items: [
-      { text: '1.概述', link: 'Linux/1.概述' },
+      { text: '概述', link: 'Linux/概述' },
       { text: 'find、whereis、where', link: 'Linux/find、whereis、where' },
       { text: 'vim', link: 'Linux/vim' },
       { text: '定时任务', link: 'Linux/定时任务' },

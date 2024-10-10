@@ -90,7 +90,6 @@ export const basicSidebar: DefaultTheme.SidebarItem[] = [
         collapsed: true,
         items: [
           { text: 'input、change', link: 'JS/事件/input、change' },
-          { text: '事件循环机制', link: 'JS/事件/事件循环机制' },
           { text: '事件调用', link: 'JS/事件/事件调用' },
           { text: '捕获、冒泡', link: 'JS/事件/捕获、冒泡' },
         ],
@@ -178,6 +177,7 @@ export const basicSidebar: DefaultTheme.SidebarItem[] = [
       { text: '遍历数组删除指定元素', link: 'JS/遍历数组删除指定元素' },
       { text: '闭包', link: 'JS/闭包' },
       { text: '防抖、节流', link: 'JS/防抖、节流' },
+      { text: '事件循环机制', link: 'JS/事件循环机制' },
     ],
   },
   {
