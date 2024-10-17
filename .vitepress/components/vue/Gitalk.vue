@@ -16,9 +16,9 @@ const commentConfig: Record<string, any> = {
   clientSecret: '2666e4f3a0e078acb19905e1c0eb30789fbabbcc',
   // 评论项目名
   repo: 'gitalk-comments',
-  owner: 'stormzhangbx',
-  admin: ['stormzhangbx'],
-  githubID: 'stormzhangbx',
+  owner: 'newarea0',
+  admin: ['newarea0'],
+  githubID: 'newarea0',
   id: pathname,
   language: 'zh-CN',
   distractionFreeMode: true,

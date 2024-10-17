@@ -26,9 +26,9 @@ jobs:
       - uses: wangchucheng/git-repo-sync@v0.1.0
         with:
           # Gitee 仓库地址
-          target-url: https://gitee.com/stormzhangbx/blog.git
+          target-url: https://gitee.com/newarea0/blog.git
           # Gitee 用户名
-          target-username: stormzhangbx
+          target-username: newarea0
           # 存储在 GitHub Secrets 中的 Gitee 令牌
           target-token: ${{ secrets.GITEE_TOKEN }}
 ```

@@ -29,7 +29,7 @@ index.html
 </head>
 <body>
   <div id="gitalk-container"></div>
-  
+
   <script type="module" src="./src/index.js"></script>
 </body>
 </html>
@@ -37,13 +37,13 @@ index.html
 
 ```js
 // src/index.js
-var gitalk = new Gitalk({
+const gitalk = new Gitalk({
   clientID: '586fc98ddcabd3d4fbb7',
   clientSecret: 'c06929a0114901500b25f9ce552590a760352cb8',
-  // Github 仓库名，如 Github 用户 stormzhangbx 下有个仓库 gitalk
+  // Github 仓库名，如 Github 用户 newarea0 下有个仓库 gitalk
   repo: 'gitalk',
-  owner: 'stormzhangbx',
-  admin: ['stormzhangbx'],
+  owner: 'newarea0',
+  admin: ['newarea0'],
   id: location.pathname,
   distractionFreeMode: false
 })

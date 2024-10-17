@@ -187,7 +187,6 @@ export const frameworkSidebar: DefaultTheme.SidebarItem[] = [
         items: [
           { text: '概览', link: 'React/React Router/概览' },
           { text: 'BrowserRouter', link: 'React/React Router/BrowserRouter' },
-          { text: 'Routes', link: 'React/React Router/Routes' },
         ],
       },
 

@@ -18,6 +18,7 @@ export const nav = [
     items: [
       { text: '关于本站', link: '/关于/关于本站' },
       { text: '关于我', link: '/关于/关于我' },
+      { text: '在线简历', link: 'https://resume.newarea.site' },
     ],
   },
 ]

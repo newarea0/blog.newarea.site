@@ -5,7 +5,7 @@
 ### 在 Gitee 上新增仓库 git-demo，并 clone 到本地
 
 ```bash
-git clone https://gitee.com/stormzhangbx/git-demo.git
+git clone https://gitee.com/newarea0/git-demo.git
 ```
 
 ### 通过 VSCode 打开项目

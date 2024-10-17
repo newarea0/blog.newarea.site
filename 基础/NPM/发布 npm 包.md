@@ -61,7 +61,7 @@ git init
 在 github 上新建一个仓库，仓库名最好和 npm 包名相同，然后将本地项目和远程仓库关联，并将本地项目推送至远程仓库。
 
 ```sh
-git remote add origin https://github.com/stormzhangbx/npm-demo-zbx.git
+git remote add origin https://github.com/newarea0/npm-demo-zbx.git
 git branch -M main
 git push -u orgin main
 ```
