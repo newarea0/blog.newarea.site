@@ -4,11 +4,11 @@ Vue3 中的 `reactive` 是一个核心 API，用于创建响应式对象。
 
 ## 特点
 
-- 深层次的响应式转换
-- 递归解包所有 `ref` 的属性
-- 不能解构，解构后会失去响应性，但可以借助 `toRefs` 解构
-- 只能用于对象（对象、数组、`Map`、`Set` 等）类型，基本类型使用 `ref`
-- 返回一个 `Proxy` 对象，用于拦截对目标对象的访问和修改
+- 深层次的响应式转换。
+- 递归解包所有 `ref` 的属性。
+- 不能解构，解构后会失去响应性，但可以借助 `toRefs` 解构。
+- 只能用于对象（对象、数组、`Map`、`Set` 等）类型，基本类型使用 `ref`。
+- 返回一个 `Proxy` 对象，用于拦截对目标对象的访问和修改。
 
 ### 深层次的响应式转换
 
@@ -59,7 +59,7 @@ console.log(info.city) // sz
 
 ### 不能解构
 
-不能解构，解构后会失去响应性，但可以借助 `toRefs` 解构，解构后，`name` 和 `age` 仍然是响应式的。
+不能解构，解构后会失去响应性，但可以借助 `toRefs` 解构。
 
 ```js
 import { reactive, toRefs } from 'vue'
@@ -69,6 +69,7 @@ const obj = reactive({
   age: 18
 })
 
+// 解构后，name 和 age 仍然是响应式的
 const { name, age } = toRefs(obj)
 
 console.log(name, age) // {value: 'Jack'} {value: 18}
@@ -111,16 +112,15 @@ console.log(obj.name) // Tom
 ## 简版手写
 
 ```js
-// 定义一个reactive函数，传入一个目标对象
+// 定义一个 reactive 函数，传入一个目标对象
 function reactive(target) {
-  // 判断当前的目标对象是不是object类型(对象/数组)
+  // 判断当前的目标对象是 object 类型（对象/数组）
   if (target && typeof target === 'object') {
-    // 对数组或者是对象中所有的数据进行reactive的递归处理
+    // 对数组或者是对象中所有的数据进行 reactive 的递归处理
     // 先判断当前的数据是不是数组
     if (Array.isArray(target)) {
-      // 数组的数据要进行遍历操作0
+      // 数组的数据要进行遍历操作
       target.forEach((item, index) => {
-        // 如果数组中还有数组
         // 使用递归
         target[index] = reactive(item)
       })
