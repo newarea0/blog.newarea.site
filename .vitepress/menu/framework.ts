@@ -21,8 +21,7 @@ export const frameworkSidebar: DefaultTheme.SidebarItem[] = [
         text: 'v-model',
         collapsed: true,
         items: [
-          { text: 'transfer-basic-type-data', link: 'Vue/v-model/transfer-basic-type-data' },
-          { text: 'transfer-reference-type-data', link: 'Vue/v-model/transfer-reference-type-data' },
+          { text: 'defineModel', link: 'Vue/v-model/defineModel' },
         ],
       },
       { text: 'Vue3 不同构建版本的区别', link: 'Vue/Vue3 不同构建版本的区别' },
