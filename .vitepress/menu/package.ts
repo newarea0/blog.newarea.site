@@ -54,4 +54,17 @@ export const packageSidebar: DefaultTheme.SidebarItem[] = [
       { text: 'nodemon', link: 'NodeJs/nodemon' },
     ],
   },
+  {
+    text: '桌面端',
+    collapsed: true,
+    items: [
+      {
+        text: 'Electron',
+        collapsed: true,
+        items: [
+          { text: '安装', link: '桌面端/Electron/安装' },
+        ],
+      },
+    ],
+  },
 ]
