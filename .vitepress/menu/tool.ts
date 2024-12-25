@@ -170,4 +170,5 @@ export const toolSidebar: DefaultTheme.SidebarItem[] = [
   { text: 'Vercel', link: 'Vercel' },
   { text: '制作 logo、favicon', link: '制作 logo、favicon' },
   { text: '数字签名与数字证书', link: '数字签名与数字证书' },
+  { text: '语雀', link: '语雀' },
 ]
