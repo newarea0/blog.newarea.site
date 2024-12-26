@@ -2,11 +2,9 @@
 
 本地开发时，如果要切换所连接的后端服务，之前的做法是修改 .env.development 中服务地址：
 
-::: code-tabs
+::: code-group
 
-@tab .env.development
-
-```env
+```env [.env.development]
 # 服务1
 # VITE_APP_URL = http://100.118.120.201:8060
 
@@ -14,9 +12,7 @@
 VITE_APP_URL = http://100.118.120.106.com:8060
 ```
 
-@tab vite.config.ts
-
-```ts
+```ts [vite.config.ts]
 proxy: {
   '/uimp': {
     [VITE_APP_BASE_API]: {
@@ -33,11 +29,9 @@ proxy: {
 
 更好的做法是修改 host 文件，而不是修改项目配置文件：
 
-::: code-tabs
+::: code-group
 
-@tab host 文件
-
-```host
+```host [host 文件]
 # 服务1
 # 100.118.120.201 localhost.dev.com
 
@@ -45,21 +39,15 @@ proxy: {
 100.118.120.106 localhost.dev.com
 ```
 
-@tab .env.development
-
-```env
+```env [.env.development]
 VITE_APP_URL = http://localhost.dev.com:8060
 ```
 
-@tab .env
-
-```env
+```env [.env]
 VITE_APP_BASE_API = /api
 ```
 
-@tab vite.config.ts
-
-```ts
+```ts [vite.config.ts]
 import { URL, fileURLToPath } from 'node:url'
 
 import { defineConfig, loadEnv } from 'vite'

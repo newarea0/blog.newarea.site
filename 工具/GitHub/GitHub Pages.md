@@ -30,11 +30,9 @@
 
 2.在本地新建一个项目 Git foo，在项目根目录下添加如下文件
 
-::: code-tabs
+::: code-group
 
-@tab index.html
-
-```html
+```html [index.html]
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,9 +46,7 @@
 </html>
 ```
 
-@tab index.css
-
-```css
+```css [index.css]
 body {
   color: red;
 }

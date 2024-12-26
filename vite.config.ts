@@ -16,6 +16,7 @@ export default defineConfig(() => {
       exclude: [
         '@nolebase/vitepress-plugin-enhanced-readabilities/client',
       ],
+      include: ['mermaid'],
     },
     ssr: {
       noExternal: [

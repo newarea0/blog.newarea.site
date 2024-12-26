@@ -4,22 +4,18 @@
 
 将 Lodash 库导出为 Node.js 模块，使用的是 CommonJs 模块系统。
 
-::: code-tabs
+::: code-group
 
-@tab package.json
-
-```json
+```json [package.json]
 {
-  "main": "lodash.js",
+  "main": "lodash.js"
 }
 ```
 
-@tab lodash.js
-
-```js
-;(function() {
+```js [lodash.js]
+;(function () {
   // Export lodash.
-  var _ = runInContext();
+  const _ = runInContext()
 
   // Some AMD build optimizers, like r.js, check for condition patterns like:
   if (typeof define == 'function' && typeof define.amd == 'object' && define.amd) {
@@ -27,32 +23,30 @@
     // loaded by a script tag in the presence of an AMD loader.
     // See http://requirejs.org/docs/errors.html#mismatch for more details.
     // Use `_.noConflict` to remove Lodash from the global object.
-    root._ = _;
+    root._ = _
 
     // Define as an anonymous module so, through path mapping, it can be
     // referenced as the "underscore" module.
-    define(function() {
-      return _;
-    });
+    define(() => {
+      return _
+    })
   }
   // Check for `exports` after `define` in case a build optimizer adds it.
   else if (freeModule) {
     // Export for Node.js.
-    (freeModule.exports = _)._ = _;
+    (freeModule.exports = _)._ = _
     // Export for CommonJS support.
-    freeExports._ = _;
+    freeExports._ = _
   }
   else {
     // Export to the global object.
-    root._ = _;
+    root._ = _
   }
-}.call(this));
+}.call(this))
 ```
 
-@tab add.js
-
-```js
-var createMathOperation = require('./_createMathOperation');
+```js [add.js]
+const createMathOperation = require('./_createMathOperation')
 
 /**
  * Adds two numbers.
@@ -69,11 +63,11 @@ var createMathOperation = require('./_createMathOperation');
  * _.add(6, 4);
  * // => 10
  */
-var add = createMathOperation(function(augend, addend) {
-  return augend + addend;
-}, 0);
+const add = createMathOperation((augend, addend) => {
+  return augend + addend
+}, 0)
 
-module.exports = add;
+module.exports = add
 ```
 
 :::
@@ -88,10 +82,10 @@ pnpm i lodash
 
 ```js
 // 加载全部构建
-var _ = require('lodash');
+const _ = require('lodash')
 
-console.log(_.VERSION); // lodash 版本
-console.log(_.add(1, 8)); // 在 Node.js 中执行该 JavaScript 文件，终端打印出 9
+console.log(_.VERSION) // lodash 版本
+console.log(_.add(1, 8)) // 在 Node.js 中执行该 JavaScript 文件，终端打印出 9
 ```
 
 ```js
@@ -135,38 +129,30 @@ console.log(math.add(1, 2))
 
 将 Lodash 库导出为 ES 模块，使用的是 ESM 模块系统。
 
-::: code-tabs
+::: code-group
 
-@tab package.json
-
-```json
+```json [package.json]
 {
   "main": "lodash.js",
-  "module": "lodash.js",
+  "module": "lodash.js"
 }
 ```
 
-@tab lodash.js
-
-```js
-export { default as add } from './add.js';
-export { default } from './lodash.default.js';
+```js [lodash.js]
+export { default as add } from './add.js'
+export { default } from './lodash.default.js'
 ```
 
-@tab lodash.default.js
+```js [lodash.default.js]
+import lodash from './wrapperLodash.js'
 
-```js
-import lodash from './wrapperLodash.js';
+lodash.add = math.add
 
-lodash.add = math.add;
-
-export default lodash;
+export default lodash
 ```
 
-@tab add.js
-
-```js
-import createMathOperation from './_createMathOperation.js';
+```js [add.js]
+import createMathOperation from './_createMathOperation.js'
 
 /**
  * Adds two numbers.
@@ -183,11 +169,11 @@ import createMathOperation from './_createMathOperation.js';
  * _.add(6, 4);
  * // => 10
  */
-var add = createMathOperation(function(augend, addend) {
-  return augend + addend;
-}, 0);
+const add = createMathOperation((augend, addend) => {
+  return augend + addend
+}, 0)
 
-export default add;
+export default add
 ```
 
 :::
@@ -202,22 +188,22 @@ pnpm i lodash-es
 
 ```js
 // 加载全部构建
-import _ from "lodash";
+import _ from 'lodash'
 
-console.log(_.VERSION);
-console.log(_.add(1, 8));
+console.log(_.VERSION)
+console.log(_.add(1, 8))
 ```
 
 ```js
 // 加载某个函数
-import { add } from "lodash";
+import { add } from 'lodash'
 
 console.log(add(1, 2))
 ```
 
 ```js
 // 加载某类函数
-import { add } from "lodash-es/math";
+import { add } from 'lodash-es/math'
 
 console.log(math.add(1, 2))
 ```
