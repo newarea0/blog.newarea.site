@@ -1,165 +1,120 @@
 # type、interface
 
-[Differences Between Type Aliases and Interfaces](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#differences-between-type-aliases-and-interfaces)
+在 TypeScript 中，`interface` 和 `type` 都可以用来定义类型，它们有许多相似之处，但也有一些关键的区别。下面是它们的主要差异：
 
-```ts
-// 类型别名
-type g = {
-  name: string,
-  age: number
-}
+### 1. **声明合并**
+   - **`interface`** 支持声明合并（declaration merging）。如果你定义了多个相同名称的 `interface`，它们会自动合并为一个接口。
+   - **`type`** 不支持声明合并。多个相同名称的 `type` 会导致错误。
 
-// 接口
-interface Girl {
-  name: string;
-  age: number
-}
-```
+   ```ts
+   interface User {
+     name: string
+   }
 
-书写上的区别：
-- 类型别名通过`type`关键字定义，而接口通过`interface`定义;
-- 类型别名后面需要跟上`=`，而接口不需要;
-- 类型别名中使用的是`,`，而接口是`;`
+   interface User {
+     age: number
+   }
 
-关键区别在于，与始终可扩展的接口相比，类型别名无法重新打开以添加​​新属性。
+   // 合并后的结果：
+   // interface User {
+   //   name: string
+   //   age: number
+   // }
+   ```
 
-## 1 接口
+   ```ts
+   type User = {
+     name: string
+   }
 
-### 1.1 新增属性
+   type User = {
+     age: number
+   }
 
-新建一个新接口继承已有接口
+   // 错误：Duplicate identifier 'User'.
+   ```
 
-```ts
-interface Animal {
-  name: string
-}
+### 2. **扩展**
+   - **`interface`** 可以通过 `extends` 来继承其他接口。
+   - **`type`** 也可以通过交叉类型（`&`）来扩展其他类型，但其语法上稍微不同。
 
-interface Bear extends Animal {
-  honey: boolean
-}
+   ```ts
+   interface Person {
+     name: string
+   }
 
-const bear: Bear = getBear() 
-bear.name
-bear.honey
-```
+   interface Employee extends Person {
+     salary: number
+   }
+   ```
 
-新建一个新接口继承已有类型
+   ```ts
+   type Person = {
+     name: string
+   }
 
-```ts
-type Animal {
-  name: string
-}
+   type Employee = Person & {
+     salary: number
+   }
+   ```
 
-interface Bear extends Animal {
-  honey: boolean
-}
-```
+### 3. **声明的复杂性**
+   - **`interface`** 主要用于定义对象的结构，如类的形状、函数签名等。
+   - **`type`** 更灵活，可以用来定义任何类型，包括字面量类型、基本类型、联合类型、交叉类型、元组等。
 
-向已有接口添加新字段
+   ```ts
+   // 使用 interface 定义对象结构
+   interface Point {
+     x: number
+     y: number
+   }
 
-```ts
-interface Window {
-  title: string
-}
+   // 使用 type 定义联合类型
+   type Status = 'success' | 'failure'
 
-interface Window {
-  ts: TypeScriptAPI
-}
+   // 使用 type 定义元组
+   type Tuple = [number, string]
+   ```
 
-const src = 'const a = "Hello World"';
-window.ts.transpileModule(src, {});
-```
+### 4. **类型别名 vs 接口的语法**
+   - **`interface`** 用于定义对象或类的形状，通常在面向对象编程中使用。
+   - **`type`** 用于定义更复杂的类型（如联合类型、交叉类型等），更具灵活性。
 
-### 1.2 修改属性
+   ```ts
+   interface Car {
+     brand: string
+     model: string
+   }
 
-无法**修改**已有接口中某属性的类型，下面写法是错误的
+   type Vehicle = {
+     brand: string
+     model: string
+   }
+   ```
 
-```ts
-interface Foo {
-    age: number
-    address: string
-}
-interface Foo {
-    address: number
-}
-```
+### 5. **是否可以定义函数类型**
+   - **`interface`** 可以定义函数类型，但语法较为冗长。
+   - **`type`** 定义函数类型时更简洁。
 
-错误信息如下
+   ```ts
+   interface Add {
+     (a: number, b: number): number
+   }
 
-![10](https://image.newarea.site/20230713/10.png)
+   type Add = (a: number, b: number) => number
+   ```
 
-但是像下面这样写是没问题的
+### 6. **联合类型和交叉类型**
+   - **`type`** 可以定义联合类型、交叉类型等，而 **`interface`** 不能直接用于这些复杂类型的定义。
 
-```ts
-interface Foo {
-    age: number
-    address: string
-}
-interface Foo {
-    address: string
-}
-```
+   ```ts
+   type A = string | number // 联合类型
 
-## 2 类型
+   type B = { name: string } & { age: number } // 交叉类型
+   ```
 
-### 2.1 新增属性
+### 总结
+- 使用 **`interface`** 时，适合定义对象或类的结构，特别是当你需要扩展或实现接口时。
+- 使用 **`type`** 时，更适合定义复杂的类型（如联合类型、交叉类型、字面量类型等）。
 
-通过 `&` 新建一个新类型扩展已有类型
-
-```ts
-type Animal = {
-  name: string
-}
-
-type Bear = Animal & { 
-  honey: boolean 
-}
-
-const bear: Bear = getBear();
-bear.name;
-bear.honey;
-```
-
-### 2.2 修改属性
-
-使用 `Omit` 和 `&`
-
-```ts
-type A = {
-    age: number,
-    address: string
-}
-
-type B = Omit<A, 'age'> & {
-    age: string
-}
-```
-
-虽然下面写法不报错，但不管位置1处写的什么类型，类型 B 中属性 age 的类型始终是 `number`。
-
-```ts
-type A = {
-    age: number,
-    address: string
-}
-
-type B = A & {
-    age: string // 位置1
-}
-```
-
-**注意：**
-
-类型别名创建后无法更改
-
-```ts
-type Window = {
-  title: string
-}
-
-type Window = {
-  ts: TypeScriptAPI
-}
-
- // Error: Duplicate identifier 'Window'.
-```
+通常，**推荐使用 `interface`** 来定义对象类型，除非你需要更复杂的类型结构，这时可以选择 `type`。

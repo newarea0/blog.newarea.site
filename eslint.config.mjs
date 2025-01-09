@@ -6,6 +6,11 @@ export default antfu(
     typescript: true,
     markdown: true,
     yaml: true,
+
+    rules: {
+      'ts/consistent-type-definitions': 'off',
+      'style/member-delimiter-style': 'off',
+    },
   },
   // {
   //   files: ['.vitepress/**/*.ts'],

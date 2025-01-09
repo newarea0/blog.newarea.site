@@ -25,7 +25,6 @@ export const packageSidebar: DefaultTheme.SidebarItem[] = [
         collapsed: true,
         items: [
           { text: 'lodash 和 lodash-es 区别', link: '客户端/Lodash/lodash 和 lodash-es 区别' },
-          { text: 'Lodash', link: '客户端/Lodash/Lodash' },
           { text: '常用函数', link: '客户端/Lodash/常用函数' },
         ],
       },
