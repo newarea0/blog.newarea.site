@@ -62,6 +62,8 @@ export const packageSidebar: DefaultTheme.SidebarItem[] = [
         collapsed: true,
         items: [
           { text: '安装', link: '桌面端/Electron/安装' },
+          { text: 'Hello World', link: '桌面端/Electron/hello-world' },
+          { text: '进程', link: '桌面端/Electron/进程' },
         ],
       },
     ],
