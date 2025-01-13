@@ -181,3 +181,51 @@ win.loadFile('./pages/index.html') // [!code ++]
   "ext": "html,js,css"
 }
 ```
+
+## 打包项目
+
+在package.json 中进行相关配置，具体配置如下：
+
+```json
+"build": {
+  "appId": "newarea",  // 应用程序的唯一标识符
+  // 打包windows平台安装包的具体配置
+  "win": {
+    "icon":"./logo.ico", //应用图标
+    "target": [
+      {
+        "target": "nsis",  // 指定使用 NSIS 作为安装程序格式
+        "arch": ["x64"]  // 生成 64 位安装包
+      }
+    ]
+  },
+  "nsis": {
+    "oneClick": false,  // 设置为 false 使安装程序显示安装向导界面，而不是一键安装
+    "perMachine": true,  // 允许每台机器安装一次，而不是每个用户都安装
+    "allowToChangeInstallationDirectory": true  // 允许用户在安装过程中选择安装目录
+  }
+},
+```
+
+执行打包命令
+
+```bash
+pnpm build
+```
+
+打包完成后，会在项目根目录下生成 `dist` 文件夹，里面包含打包后的安装包。
+
+## Electron-vite
+
+[Electron-vite](https://cn-evite.netlify.app/) 快速、简单且功能强大，旨在开箱即用。
+
+![](https://image.newarea.site/2025-01-13_11-13-00.png)
+
+Electron-vite 是一个新型构建工具，旨在为 Electron 提供更快、更精简的体验。
+
+主要由五部分组成：
+- 一套构建指令，它使用 [Vite](https://cn.vitejs.dev/) 打包你的代码，并且它能够处理 Electron 的独特环境，包括 [Node.js](https://nodejs.org/) 和浏览器环境。
+- 集中配置主进程、渲染器和预加载脚本的 Vite 配置，并针对 Electron 的独特环境进行预配置。
+- 为渲染器提供快速模块热替换（HMR）支持，为主进程和预加载脚本提供热重载支持，极大地提高了开发效率。
+- 优化 Electron 主进程资源处理。
+- 使用 V8 字节码保护源代码。
