@@ -13,6 +13,8 @@ import '@nolebase/vitepress-plugin-enhanced-readabilities/client/style.css'
 import { NolebaseHighlightTargetedHeading } from '@nolebase/vitepress-plugin-highlight-targeted-heading/client'
 import '@nolebase/vitepress-plugin-highlight-targeted-heading/client/style.css'
 
+import NavLinks from '../components/vue/NavLinks.vue'
+
 export default {
   extends: DefaultTheme,
   Layout: () => {
@@ -29,6 +31,8 @@ export default {
     })
   },
   enhanceApp({ app }) {
+    app.component('NavLinks', NavLinks)
+
     app.provide(InjectionKey, {
       layoutSwitch: {
         // 默认全屏宽度

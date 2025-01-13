@@ -7,6 +7,7 @@ import { toolSidebar } from './tool'
 
 // 导航栏
 export const nav = [
+  { text: '导航', link: '/导航', activeMatch: '/导航/' },
   { text: '基础', link: '/基础/HTML/contenteditable', activeMatch: '/基础/' },
   { text: '框架', link: '/框架/Vue/响应式/reactive', activeMatch: '/框架/' },
   { text: '工具', link: '/工具/Docker/安装', activeMatch: '/工具/' },
