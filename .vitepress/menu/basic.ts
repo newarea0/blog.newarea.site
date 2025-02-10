@@ -17,9 +17,10 @@ export const basicSidebar: DefaultTheme.SidebarItem[] = [
           { text: '几种元素含义', link: 'HTML/SVG/几种元素含义' },
         ],
       },
-      { text: '使用 Preload、Prefetch 优化前端页面的资源加载', link: 'HTML/使用 Preload、Prefetch 优化前端页面的资源加载' },
+      { text: 'preload、prefetch', link: 'HTML/preload、prefetch' },
       { text: '字符实体', link: 'HTML/字符实体' },
       { text: '拖放', link: 'HTML/拖放' },
+      { text: 'async、defer', link: 'HTML/async、defer' },
     ],
   },
   {
