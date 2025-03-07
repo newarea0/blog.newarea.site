@@ -120,6 +120,7 @@ export const toolSidebar: DefaultTheme.SidebarItem[] = [
       { text: '关闭自动更新', link: 'Windows/关闭自动更新' },
       { text: '双屏切换单屏，之前在另外一显示器显示的软件窗口现无法显示', link: 'Windows/双屏切换单屏，之前在另外一显示器显示的软件窗口现无法显示' },
       { text: '清理右键菜单', link: 'Windows/清理右键菜单' },
+      { text: '常用插件', link: 'Windows/常用插件' },
     ],
   },
   {
