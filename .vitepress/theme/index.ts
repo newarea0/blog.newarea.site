@@ -3,7 +3,6 @@ import { h } from 'vue'
 import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import './style.css'
-
 // 阅读增强
 import { InjectionKey, LayoutMode, NolebaseEnhancedReadabilitiesMenu, NolebaseEnhancedReadabilitiesScreenMenu } from '@nolebase/vitepress-plugin-enhanced-readabilities/client'
 import type { Options } from '@nolebase/vitepress-plugin-enhanced-readabilities/client'
@@ -14,6 +13,7 @@ import { NolebaseHighlightTargetedHeading } from '@nolebase/vitepress-plugin-hig
 import '@nolebase/vitepress-plugin-highlight-targeted-heading/client/style.css'
 
 import NavLinks from '../components/vue/NavLinks.vue'
+import MusicPlayer from '../components/vue/MusicPlayer.vue'
 
 export default {
   extends: DefaultTheme,
@@ -24,6 +24,8 @@ export default {
       'nav-bar-content-after': () => h(NolebaseEnhancedReadabilitiesMenu),
       // 为较窄的屏幕（通常是小于 iPad Mini）添加阅读增强菜单
       'nav-screen-content-after': () => h(NolebaseEnhancedReadabilitiesScreenMenu),
+      // 添加音乐播放器到导航栏
+      'nav-bar-content-before': () => h(MusicPlayer),
 
       'layout-top': () => [
         h(NolebaseHighlightTargetedHeading),
@@ -32,6 +34,7 @@ export default {
   },
   enhanceApp({ app }) {
     app.component('NavLinks', NavLinks)
+    app.component('MusicPlayer', MusicPlayer)
 
     app.provide(InjectionKey, {
       layoutSwitch: {
