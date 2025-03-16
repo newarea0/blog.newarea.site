@@ -85,13 +85,15 @@ p {
 </html>
 ```
 
-可以发现网络面板里只有一次 `index.css` 的请求，这是因为当后面的 `<link rel="stylesheet">` 需要同样的资源时，浏览器会使用已经**预加载的缓存版本，而不会重新发起请求**。
-
 ```css [index.css]
 p {
   color: red;
 }
 ```
+
+:::
+
+可以发现网络面板里只有一次 `index.css` 的请求，这是因为当后面的 `<link rel="stylesheet">` 需要同样的资源时，浏览器会使用已经**预加载的缓存版本，而不会重新发起请求**。
 
 ![](https://image.newarea.site/2025-01-16_10-05-10.png)
 
