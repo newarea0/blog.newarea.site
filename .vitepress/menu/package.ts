@@ -51,6 +51,7 @@ export const packageSidebar: DefaultTheme.SidebarItem[] = [
       { text: 'inquire', link: 'NodeJs/inquire' },
       { text: 'mddir', link: 'NodeJs/mddir' },
       { text: 'nodemon', link: 'NodeJs/nodemon' },
+      { text: 'serve', link: 'NodeJs/serve' },
     ],
   },
   {

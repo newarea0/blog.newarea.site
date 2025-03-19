@@ -7,7 +7,6 @@
 - mermaid：[vitepress-plugin-mermaid](https://emersonbottero.github.io/vitepress-plugin-mermaid/guide/getting-started.html)
 - 音乐
 
-
 项目
 
 - ESlint
