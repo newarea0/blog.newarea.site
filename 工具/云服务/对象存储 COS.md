@@ -36,13 +36,17 @@ PicGo 极大方便了将资源上传到腾讯云 COS，例如通过右键菜单�
 在 PicGo 中设置腾讯云COS（对象存储），步骤如下：
 
 1. 下载并安装 PicGo。
-2. 进入 PicGo 【图床设置】-【腾讯云COS】中配置腾讯云COS相关信息，其中
-   - AppId：在腾讯云“访问管理 / 访问密钥 / API密钥访问”中查看。
-   - SecretId：在腾讯云“访问管理 / 访问密钥 / API密钥访问”中查看。
-   - SecretKey：SecretId 对应的 SecretKey，注意腾讯云关闭了查询 SecretKey 的功能，仅支持在创建时查看，请及时保存 SecretKey。
-   - Bucket：腾讯云COS中创建的存储桶名称。
-   - 存储区域：存储桶所在的地域，例如 ap-guangzhou。
+2. 进入 PicGo 【图床设置】-【腾讯云COS】中配置腾讯云COS相关信息
+   ![](https://image.newarea.site/2025-04-28_00-00-48.png)
 3. 之后就可以通过右键上传资源文件了。
+
+注意：
+1. 如果刚创建腾讯云API密钥，可能需要等一会才生效。
+2. 因为 PicGo 使用频繁，可以设置其开机自启。
+3. 如果右键不显示，可以使用 ContextMenuManager 将其添加到右键菜单中：
+
+   推荐的菜单命令 `D:\PicGo\PicGo.exe upload "%1"`。
+   
 
 ## 如何使用自定义域名
 

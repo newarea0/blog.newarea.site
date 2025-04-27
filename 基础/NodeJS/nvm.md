@@ -6,7 +6,11 @@
 
 安装向导会询问 NVM 的安装路径，这里选择 `D:\nvm`。
 
-安装向导会询问当前 Node 的符号链接路径（表示当前 Node，执行 `D:\nvm` 下当前版本的 Node），这里选择 `E:\nodejs`。
+![](https://image.newarea.site/2025-04-27_22-34-55.png)
+
+安装向导会询问当前 Node 的符号链接路径（表示当前 Node），这里选择 `E:\nvm4w\nodejs`。
+
+![](https://image.newarea.site/2025-04-27_22-37-03.png)
 
 下载完成后安装 LTS Node：
 
