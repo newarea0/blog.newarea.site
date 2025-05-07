@@ -103,7 +103,7 @@ TOC 是 table of content 的简写
 </body>
 ```
 
-通过元素的scrollIntoView方法，滚动元素的父容器，使被调用scrollIntoView的元素对用户可见。
+通过元素的 `scrollIntoView` 方法，滚动元素的父容器，使被调用 `scrollIntoView` 的元素对用户可见。
 
 ## 2 功能二：滚动内容，相应目录高亮
 
@@ -175,7 +175,7 @@ TOC 是 table of content 的简写
 </body>
 ```
 
-重点是 handleScroll 中的逻辑
+重点是 `handleScroll` 中的逻辑。
 
 Vue 项目
 
@@ -271,7 +271,7 @@ ul>li {
 </style>
 ```
 
-注意，要将容器元素（产生滚动条的元素）设置成定位元素，只有这样 offsetTop 才是相对顶部内边距的距离。
+注意，要将容器元素（产生滚动条的元素）设置成定位元素，只有这样 `offsetTop` 才是相对顶部内边距的距离。
 
 ## 3 功能三：点击段落标题，该段落顶端滚动到和浏览器视口顶端对齐，并且对应目录高亮
 
@@ -283,4 +283,4 @@ ul>li {
 
 [MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLElement/offsetTop)
 
-HTMLElement.offsetTop 为只读属性，它返回当前元素相对于其 [offsetParent](https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLElement/offsetParent) 元素的顶部内边距的距离。
+`HTMLElement.offsetTop` 为只读属性，它返回当前元素相对于其 [offsetParent](https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLElement/offsetParent) 元素的顶部内边距的距离。
