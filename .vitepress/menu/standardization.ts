@@ -32,7 +32,6 @@ export const standardizationSidebar: DefaultTheme.SidebarItem[] = [
   { text: 'editorconfig', link: 'editorconfig' },
   { text: 'husky', link: 'husky' },
   { text: 'lint-staged', link: 'lint-staged' },
-  { text: 'note', link: 'note' },
   { text: 'stylelint', link: 'stylelint' },
   { text: 'yorkie', link: 'yorkie' },
   {
