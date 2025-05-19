@@ -1,77 +1,33 @@
 # husky
 
-husky 可以让我们向项目中方便添加 git hooks。
+> 本笔记基于 husky v9
 
-[官网](https://typicode.github.io/husky/#/)
+husky 是一个 git hooks 管理器，可以让我们向项目中方便添加 git hooks。
 
-[husky使用总结](https://zhuanlan.zhihu.com/p/366786798)
+Husky 能让你在 Git 的生命周期事件中插入脚本，比如：
 
-[GitHook 工具 —— husky介绍及使用](https://www.cnblogs.com/jiaoshou/p/12222665.html)
+- pre-commit：提交前运行，比如运行 ESLint
 
-创建一个 husky 项目 husky-test
+- commit-msg：检查提交信息格式（如使用 commitlint）
+
+- pre-push：推送前运行测试
 
 ```sh
+# 创建测试项目
 mkdir husky-test
 cd husky-test
 npm init -y
 git init
-npm i husky -D
-npx husky install
-npx husky add .husky/commit-msg 'npm test'
+
+# 安装 husky
+pnpm i husky -D
+
+# 在 .husky/ 中创建 pre-commit 脚本，并更新 package.json 中的 prepare 脚本
+npx husky init
 ```
 
-`npm husky install` 的作用是生成 `.husky/_/.gitignore` 和 `.husky/_/husky.sh`
+参考：
 
-`npx husky add .husky/commit-msg 'npm test'` 的作用是生成 `.husky/pre-commit`
+- [官网](https://typicode.github.io/husky/#/)
 
-目录结构
-
-```
-|-- husky-test
-    |-- .gitignore
-    |-- package-lock.json
-    |-- package.json
-    |-- .husky # 通过命令 npx husky-init 生成的
-    |   |-- pre-commit # pre-commit hooks
-    |   |-- _
-    |       |-- .gitignore
-    |       |-- husky.sh
-```
-
-```json
-// package.json
-{
-  "name": "husky-test",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "prepare": "husky install"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "husky": "^7.0.0"
-  }
-}
-```
-
-```sh
-// husky.sh
-#!/bin/sh
-. "$(dirname "$0")/_/husky.sh"
-
-npm test
-```
-
-项目创建了一个 pre-commit hooks，每次提交代码之前会执行命令`npm test`
-
-添加git hooks，运行一下命令创建git hooks
-
-`npx husky add .husky/commit-msg 'npx --no-install commitlint --edit "$1"'`
-如果没成功，就执行 `husky add .husky/commit-msg 'npx --no-install commitlint --edit "$1"'`
-或 `.\node_modules\.bin\husky.cmd add .husky/commit-msg 'npx --no-install commitlint --edit "$1"'`
-
-运行完该命令后我们会看到 `.husky/` 目录下新增了一个名为 pre-commit 的 shell 脚本。
+- [GitHook 工具 —— husky介绍及使用](https://www.cnblogs.com/jiaoshou/p/12222665.html)

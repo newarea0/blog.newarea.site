@@ -241,6 +241,8 @@ export const basicSidebar: DefaultTheme.SidebarItem[] = [
     items: [
       { text: '任意值', link: 'Tailwind CSS/任意值' },
       { text: '使用方式', link: 'Tailwind CSS/使用方式' },
+      { text: 'preflight', link: 'Tailwind CSS/preflight' },
+      { text: '解决和组件库一起使用时工具类不生效的问题', link: 'Tailwind CSS/解决和组件库一起使用时工具类不生效的问题' },
     ],
   },
   {
