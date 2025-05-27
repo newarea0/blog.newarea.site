@@ -202,7 +202,6 @@ export const basicSidebar: DefaultTheme.SidebarItem[] = [
       { text: 'npm link', link: 'NPM/npm link' },
       { text: 'npm 包管理机制', link: 'NPM/npm 包管理机制' },
       { text: 'npx', link: 'NPM/npx' },
-      { text: 'nvm-windows', link: 'NPM/nvm-windows' },
       { text: 'package-lock', link: 'NPM/package-lock' },
       {
         text: 'package.json',

@@ -58,7 +58,7 @@ pnpm dev
 
 ### 依赖管理
 
-使用选项 `--filter xxx`（简写 `-F xxx`） 给子包安装、卸载依赖，如：
+使用选项 `--filter xxx`（简写 `-F xxx`） 给子包安装、卸载依赖， `xxx` 是对应项目 package.json 里面的 `name` 属性，需要确保 `name` 唯一如：
 
 ```sh
 # 为指定子包 app1 安装外部依赖 lodash-es

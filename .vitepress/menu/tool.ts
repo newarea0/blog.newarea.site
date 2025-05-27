@@ -122,6 +122,7 @@ export const toolSidebar: DefaultTheme.SidebarItem[] = [
       { text: '清理右键菜单', link: 'Windows/清理右键菜单' },
       { text: '常用插件', link: 'Windows/常用插件' },
       { text: '处理器架构', link: 'Windows/处理器架构' },
+      { text: 'ExecutionPolicy', link: 'ExecutionPolicy' },
     ],
   },
   {
