@@ -12,6 +12,7 @@ export const buildToolSidebar: DefaultTheme.SidebarItem[] = [
         items: [
           { text: 'unplugin-auto-import', link: 'Vite/常用插件/unplugin-auto-import' },
           { text: 'unplugin-vue-components', link: 'Vite/常用插件/unplugin-vue-components' },
+          { text: 'unplugin-icons', link: 'Vite/常用插件/unplugin-icons' },
           { text: 'vite-plugin-style-import', link: 'Vite/常用插件/vite-plugin-style-import' },
           { text: 'vite-plugin-svg-icons', link: 'Vite/常用插件/vite-plugin-svg-icons' },
         ],
