@@ -38,7 +38,10 @@
 ### 1.3 当 `flex` 取值为一个非负整数，则该数值为 `flex-grow` 值，另外，`flex-shrink: 1; flex-basis: 0%;`
 
 ```css
+/* 表示元素会尽可能地扩展（grow），也允许收缩（shrink），并从 0 的基础大小开始分配空间。 */
 .item { flex: 1; }
+
+/* 等价 */
 .item {
   flex-grow: 1;
   flex-shrink: 1;
@@ -48,6 +51,8 @@
 
 ```css
 .item { flex: 0; }
+
+/* 等价 */
 .item {
   flex-grow: 0;
   flex-shrink: 1;
@@ -195,7 +200,9 @@
 
 ## 4 flex:1 搭配 min-width:0
 
-在一个 flex 布局中，对于一个设置了 `flex:1` 的div容器，再对其设置 `min-width: 0`，可以保证内容不超出该div。
+在某些浏览器中，特别是 Chrome 和 Firefox，flex 子项的默认 min-width 是 auto，也就是说它不会收缩到小于其内容的宽度。这就会导致当 flex: 1 想要让元素收缩时，内容撑住了它，导致溢出或布局异常。
+
+在一个 flex 布局中，对于一个设置了 `flex:1` 的div容器，再对其设置 `min-width: 0`，可以保证内容不超出该div。这样设置后，元素可以真正按照 flex 容器的期望去收缩。
 
 ```html
 <style>
