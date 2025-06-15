@@ -151,6 +151,7 @@ export const toolSidebar: DefaultTheme.SidebarItem[] = [
     items: [
       { text: '使用技巧', link: '谷歌浏览器/使用技巧' },
       { text: '常用快捷键', link: '谷歌浏览器/常用快捷键' },
+      { text: '常用插件', link: '谷歌浏览器/常用插件' },
     ],
   },
   {
