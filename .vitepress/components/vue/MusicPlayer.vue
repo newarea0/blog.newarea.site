@@ -5,6 +5,7 @@ import { Icon } from '@iconify/vue'
 const audioPlayer = ref(null)
 const isPlaying = ref(false)
 const progress = ref(0)
+const isMobile = ref(false)
 
 // 示例歌曲列表
 const playlist = [
@@ -46,6 +47,10 @@ function onSongEnd() {
   isPlaying.value = false
   progress.value = 0
 }
+
+if (typeof window !== 'undefined') {
+  isMobile.value = /Mobi|Android|iPhone|iPad|iPod|Windows Phone/i.test(navigator.userAgent)
+}
 </script>
 
 <template>
@@ -56,7 +61,7 @@ function onSongEnd() {
         <Icon v-if="!isPlaying" icon="ant-design:play-circle-outlined" />
         <Icon v-else icon="ant-design:pause-circle-outlined" />
       </button>
-      <div class="song-info">
+      <div v-if="!isMobile" class="song-info">
         <span class="song-title">{{ currentSong.title }}</span>
         <div class="progress-bar" @click="seek">
           <div class="progress" :style="{ width: `${progress}%` }" />
