@@ -41,6 +41,7 @@ export const basicSidebar: DefaultTheme.SidebarItem[] = [
       },
       { text: '修改滚动条样式', link: 'CSS/修改滚动条样式' },
       { text: '背景', link: 'CSS/背景' },
+      { text: 'mask-image', link: 'CSS/mask-image' },
     ],
   },
   {
