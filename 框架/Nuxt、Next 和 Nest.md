@@ -1,4 +1,4 @@
-# Nuxt.js、Next.js 和 Nest.js
+# Nuxt、Next 和 Nest
 
 Nuxt.js、Next.js 和 Nest.js 是三个功能、应用场景都不相同的 JavaScript 框架，它们的名称虽然相似，但用法和定位完全不同。下面是它们的区别对比：
 

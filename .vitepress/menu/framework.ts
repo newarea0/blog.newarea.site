@@ -220,5 +220,5 @@ export const frameworkSidebar: DefaultTheme.SidebarItem[] = [
     ],
   },
 
-  { text: 'Nuxt.js、Next.js 和 Nest.js', link: 'Nuxt.js、Next.js 和 Nest.js' },
+  { text: 'Nuxt、Next 和 Nest', link: 'Nuxt、Next 和 Nest' },
 ]
