@@ -6,17 +6,6 @@ export const basicSidebar: DefaultTheme.SidebarItem[] = [
     collapsed: true,
     items: [
       { text: 'contenteditable', link: 'HTML/contenteditable' },
-      {
-        text: 'SVG',
-        collapsed: true,
-        items: [
-          { text: '概览', link: 'HTML/SVG/概览' },
-          { text: 'fill、stroke', link: 'HTML/SVG/fill、stroke' },
-          { text: 'SVG 雪碧图', link: 'HTML/SVG/SVG 雪碧图' },
-          { text: 'viewbox', link: 'HTML/SVG/viewbox' },
-          { text: '几种元素含义', link: 'HTML/SVG/几种元素含义' },
-        ],
-      },
       { text: 'preload、prefetch', link: 'HTML/preload、prefetch' },
       { text: '字符实体', link: 'HTML/字符实体' },
       { text: '拖放', link: 'HTML/拖放' },
