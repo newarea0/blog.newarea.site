@@ -42,6 +42,7 @@ export const basicSidebar: DefaultTheme.SidebarItem[] = [
       { text: '修改滚动条样式', link: 'CSS/修改滚动条样式' },
       { text: '背景', link: 'CSS/背景' },
       { text: 'mask-image', link: 'CSS/mask-image' },
+      { text: '包含块', link: 'CSS/包含块' },
     ],
   },
   {
@@ -180,6 +181,8 @@ export const basicSidebar: DefaultTheme.SidebarItem[] = [
       { text: '闭包', link: 'JS/闭包' },
       { text: '防抖、节流', link: 'JS/防抖、节流' },
       { text: '事件循环机制', link: 'JS/事件循环机制' },
+      { text: 'requestAnimationFrame', link: 'JS/requestAnimationFrame' },
+      { text: 'IntersectionObserver', link: 'JS/IntersectionObserver' },
     ],
   },
   {
