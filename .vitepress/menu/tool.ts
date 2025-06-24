@@ -177,4 +177,5 @@ export const toolSidebar: DefaultTheme.SidebarItem[] = [
   { text: '语雀', link: '语雀' },
   { text: 'Chocolatey', link: 'Chocolatey' },
   { text: 'mkcert', link: 'mkcert' },
+  { text: '常用应用', link: '常用应用' },
 ]
