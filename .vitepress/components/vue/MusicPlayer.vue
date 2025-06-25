@@ -117,4 +117,10 @@ if (typeof window !== 'undefined') {
   border-radius: 2px;
   transition: width 0.1s linear;
 }
+
+@media (max-width: 1280px) {
+  .song-info {
+    display: none;
+  }
+}
 </style>
