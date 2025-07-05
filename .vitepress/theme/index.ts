@@ -14,6 +14,7 @@ import '@nolebase/vitepress-plugin-highlight-targeted-heading/client/style.css'
 
 import NavLinks from '../components/vue/NavLinks.vue'
 import MusicPlayer from '../components/vue/MusicPlayer.vue'
+import Giscus from '../components/vue/Giscus.vue'
 
 export default {
   extends: DefaultTheme,
@@ -30,6 +31,7 @@ export default {
       'layout-top': () => [
         h(NolebaseHighlightTargetedHeading),
       ],
+      'doc-footer-before': () => h(Giscus),
     })
   },
   enhanceApp({ app }) {
