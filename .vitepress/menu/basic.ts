@@ -173,6 +173,7 @@ export const basicSidebar: DefaultTheme.SidebarItem[] = [
       { text: '事件循环机制', link: 'JS/事件循环机制' },
       { text: 'requestAnimationFrame', link: 'JS/requestAnimationFrame' },
       { text: 'IntersectionObserver', link: 'JS/IntersectionObserver' },
+      { text: 'Web Component', link: 'JS/Web Components' },
     ],
   },
   {
