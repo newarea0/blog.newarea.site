@@ -32,7 +32,7 @@ export const basicSidebar: DefaultTheme.SidebarItem[] = [
       { text: '背景', link: 'CSS/背景' },
       { text: 'mask-image', link: 'CSS/mask-image' },
       { text: '包含块', link: 'CSS/包含块' },
-      { text: '自定义属性', link: 'CSS/custom-properties' },
+      { text: '自定义属性', link: 'CSS/Custom Properties' },
     ],
   },
   {
