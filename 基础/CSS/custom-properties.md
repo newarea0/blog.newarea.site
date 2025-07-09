@@ -2,8 +2,6 @@
 
 CSS 自定义属性（Custom Properties），也叫 **CSS 变量（CSS Variables）**，是指我们可以在 CSS 中定义和使用变量，提升样式的可维护性、复用性和动态性。
 
----
-
 ## 基本语法
 
 ### 定义变量
