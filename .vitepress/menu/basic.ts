@@ -205,6 +205,7 @@ export const basicSidebar: DefaultTheme.SidebarItem[] = [
           { text: 'type', link: 'NPM/package.json/type' },
           { text: 'types', link: 'NPM/package.json/types' },
           { text: 'unpkg', link: 'NPM/package.json/unpkg' },
+          { text: 'scripts', link: 'NPM/package.json/scripts' },
         ],
       },
       { text: 'scripts-prepend-node-path', link: 'NPM/scripts-prepend-node-path' },
