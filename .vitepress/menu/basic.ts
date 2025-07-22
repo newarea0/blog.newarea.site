@@ -32,6 +32,7 @@ export const basicSidebar: DefaultTheme.SidebarItem[] = [
       { text: '背景', link: 'CSS/背景' },
       { text: 'mask-image', link: 'CSS/mask-image' },
       { text: '包含块', link: 'CSS/包含块' },
+      { text: '自定义属性', link: 'CSS/Custom Properties' },
     ],
   },
   {
@@ -172,6 +173,7 @@ export const basicSidebar: DefaultTheme.SidebarItem[] = [
       { text: '事件循环机制', link: 'JS/事件循环机制' },
       { text: 'requestAnimationFrame', link: 'JS/requestAnimationFrame' },
       { text: 'IntersectionObserver', link: 'JS/IntersectionObserver' },
+      { text: 'Web Component', link: 'JS/Web Components' },
     ],
   },
   {
