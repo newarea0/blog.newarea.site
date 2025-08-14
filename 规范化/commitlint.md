@@ -34,13 +34,18 @@ pnpm i husky -D
 npx husky init
 ```
 
-`npx husky init` 简化了项目中的 husky 设置。它会在 `.husky/` 中创建 `pre-commit` 脚本，并更新 `package.json` 中的 `prepare` 脚本。
+`npx husky init` 简化了项目中的 husky 设置。它会：
 
-删除文件 `.husky/pre-commit`、`package.json` 中的 `"prepare": "husky"`，创建 `.husky/commit-msg`：
+- 在 `.husky/` 中创建 `pre-commit` 脚本（用于在提交前检查代码，防止提交不符合规范的代码，此处用不上，所以删除）
+- 更新 `package.json` 中的 `prepare` 脚本（用于在安装依赖时自动执行 husky）。
+
+之后手动创建 `.husky/commit-msg` 文件，内容如下：
 
 ```
 npx --no-install commitlint --edit "$1"
 ```
+
+在 package.json 文件中，`"prepare": "husky"` 这条命令的作用是：每次安装依赖时，自动初始化 husky，确保 git 钩子（如 pre-commit、commit-msg 等）能正常工作。这样可以保证团队成员拉取代码后，husky 钩子始终处于激活状态，无需手动执行 `husky install`。
 
 ## 4 测试
 
