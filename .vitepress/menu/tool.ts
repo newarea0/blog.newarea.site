@@ -28,6 +28,7 @@ export const toolSidebar: DefaultTheme.SidebarItem[] = [
       { text: '忽略文件', link: 'Git/忽略文件' },
       { text: '追加新的改动到之前的 commmit', link: 'Git/追加新的改动到之前的 commmit' },
       { text: '常见问题', link: 'Git/常见问题' },
+      { text: '修改文件夹名称大小写', link: 'Git/修改文件夹名称大小写' },
     ],
   },
   {
