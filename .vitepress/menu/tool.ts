@@ -157,13 +157,15 @@ export const toolSidebar: DefaultTheme.SidebarItem[] = [
     ],
   },
   {
-    text: '静态站点',
+    text: 'Vitepress',
     collapsed: true,
     items: [
-      { text: 'srcDir 的作用', link: '静态站点/srcDir 的作用' },
-      { text: 'Vitepress', link: '静态站点/Vitepress' },
-      { text: '自动生成侧边栏', link: '静态站点/自动生成侧边栏' },
-      { text: '集成 Algolia', link: '静态站点/集成 Algolia' },
+      { text: 'srcDir 的作用', link: 'Vitepress/srcDir 的作用' },
+      { text: 'Vitepress', link: 'Vitepress/Vitepress' },
+      { text: '自动生成侧边栏', link: 'Vitepress/自动生成侧边栏' },
+      { text: '集成 Algolia', link: 'Vitepress/集成 Algolia' },
+      { text: '数学公式', link: 'Vitepress/数学公式' },
+      { text: '流程图', link: 'Vitepress/流程图' },
     ],
   },
 

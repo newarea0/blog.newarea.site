@@ -1,6 +1,7 @@
 import { defineConfig } from 'vitepress'
 import { withPwa } from '@vite-pwa/vitepress'
 import { withMermaid } from 'vitepress-plugin-mermaid'
+import katex from '@vscode/markdown-it-katex'
 import { description, github, title } from './scripts/meta'
 import pwa from './scripts/pwa'
 import algoliaOptions from './scripts/algolia'
@@ -21,6 +22,11 @@ export default withPwa(
       ignoreDeadLinks: true,
       markdown: {
         lineNumbers: true,
+        config: (md) => {
+          md.use(katex.default)
+        },
+        // math: true,
+        // mermaid: true,
       },
       pwa,
       head: [
@@ -59,6 +65,14 @@ export default withPwa(
           message: `全链路学习网站，欢迎 <a target="_blank" style="color: var(--vp-c-brand)" href="${github}">star ⭐</a> 让更多人发现`,
           copyright: `<a target="_blank" href="https://beian.miit.gov.cn/">粤ICP备2023127875号-1</a> | 版权所有 © ${year}`,
         },
+        plugins: [
+          [
+            '@maginapp/vitepress-plugin-katex', // enable LaTeX on the pages
+            {
+              delimiters: 'dollars',
+            },
+          ],
+        ],
       },
       mermaid: {},
     }),

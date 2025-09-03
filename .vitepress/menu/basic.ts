@@ -174,6 +174,7 @@ export const basicSidebar: DefaultTheme.SidebarItem[] = [
       { text: 'requestAnimationFrame', link: 'JS/requestAnimationFrame' },
       { text: 'IntersectionObserver', link: 'JS/IntersectionObserver' },
       { text: 'Web Component', link: 'JS/Web Components' },
+      { text: '等比缩放适配容器', link: 'JS/等比缩放适配容器' },
     ],
   },
   {
