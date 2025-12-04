@@ -98,11 +98,11 @@
 
 ## 7 清理应用日志文件
 
-双击“c盘清理.bat”即可
+下载[c盘清理.bat](./c盘清理.bat), 鼠标右键点击该批处理文件，在弹出的菜单中，选择“以管理员身份运行”。
 
 ## 8 清理 Winsxs 文件夹
 
-首先打开 管理员权限的 命令行或者 Powershell，然后执行下面的命令
+首先打开管理员权限的 命令行或者 Powershell，然后执行下面的命令
 
 ```sh
 Dism /online /Cleanup-Image /StartComponentCleanup
