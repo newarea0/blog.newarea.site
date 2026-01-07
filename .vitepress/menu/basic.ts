@@ -303,6 +303,8 @@ export const basicSidebar: DefaultTheme.SidebarItem[] = [
     collapsed: true,
     items: [
       { text: '定时器', link: 'Dart/定时器' },
+      { text: '函数', link: 'Dart/函数' },
+      { text: 'var const final 区别', link: 'Dart/var const final 区别' },
     ],
   },
 ]
