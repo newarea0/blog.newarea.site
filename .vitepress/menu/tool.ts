@@ -98,7 +98,7 @@ export const toolSidebar: DefaultTheme.SidebarItem[] = [
       { text: '安装', link: 'Nginx/安装' },
       { text: '指令', link: 'Nginx/指令' },
       { text: '部署多个应用', link: 'Nginx/部署多个应用' },
-      { text: '重定向到 HTTTPS', link: 'Nginx/重定向到 HTTTPS' },
+      { text: '重定向到 HTTPS', link: 'Nginx/重定向到 HTTPS' },
     ],
   },
   {
