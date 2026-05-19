@@ -184,17 +184,17 @@ win.loadFile('./pages/index.html') // [!code ++]
 
 ## 打包项目
 
-在package.json 中进行相关配置，具体配置如下：
+在 package.json 中进行相关配置，具体配置如下：
 
 ```json
 "build": {
   "appId": "newarea",  // 应用程序的唯一标识符
-  // 打包windows平台安装包的具体配置
+  // 打包 windows 平台安装包的具体配置
   "win": {
     "icon":"./logo.ico", //应用图标
     "target": [
       {
-        "target": "nsis",  // 指定使用 NSIS 作为安装程序格式
+        "target": "nsis",  // 指定使用 NSIS 作为安装程序格式（exe 格式）
         "arch": ["x64"]  // 生成 64 位安装包
       }
     ]
