@@ -10,7 +10,7 @@ import { description, title } from './meta'
 
 const pwa: Partial<VitePWAOptions> = {
   // 指定PWA文件输出目录
-  outDir: resolve(__dirname, '../../../dist'),
+  outDir: resolve(__dirname, '../../dist'),
   // 自动更新，PWA会自动检查并应用更新
   registerType: 'autoUpdate',
   // 表示不在HTML中自动包含manifest中定义的图标
