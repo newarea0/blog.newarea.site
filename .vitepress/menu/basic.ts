@@ -307,4 +307,11 @@ export const basicSidebar: DefaultTheme.SidebarItem[] = [
       { text: 'var const final 区别', link: 'Dart/var const final 区别' },
     ],
   },
+  {
+    text: 'Python',
+    collapsed: true,
+    items: [
+      { text: 'UV', link: 'Python/UV' },
+    ],
+  },
 ]

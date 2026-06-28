@@ -40,4 +40,6 @@ AI 模型按顺序一次生成一个 token。它们先预测下一个 token，�
 
 AI 工具通常会采用一些技术来减少发送给底层模型的 token 数量。例如，自动缓存你经常复用的提示部分，或帮助你管理每次请求所包含的上下文。
 
-下一课我们将深入探讨上下文。
+## Token 计算
+
+[Tokenizer](https://platform.openai.com/tokenizer)
